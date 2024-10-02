@@ -1,0 +1,16 @@
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\frm_DangNhap.pdb
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\ThuVien.dll
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\DA_PTPMUDTM.pdb
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\DA_PTPMUDTM.exe.config
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\ThuVien.pdb
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\ThuVien.dll.config
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.csproj.AssemblyReference.cache
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.Properties.Resources.resources
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.UC_DangNhap.resources
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.UC_QuenMatKhau.resources
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.csproj.GenerateResource.cache
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.csproj.CoreCompileInputs.cache
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_Dang.CFAB8E4D.Up2Date
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.dll
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\obj\Debug\frm_DangNhap.pdb
+D:\PTUDTM\CSM\WinFormCSM\frm_DangNhap\bin\Debug\DA_PTPMUDTM.exe
