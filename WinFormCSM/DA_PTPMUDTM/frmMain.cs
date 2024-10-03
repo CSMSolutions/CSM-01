@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ThuVien;
+using DTO;
 
 namespace DA_PTPMUDTM
 {
     public partial class frmMain : Form
     {
-        XuLy xl = new XuLy();
+        BLL_SanPham xl = new BLL_SanPham();
 
         public frmMain()
         {
@@ -22,15 +24,30 @@ namespace DA_PTPMUDTM
         }
         public void LoadSanPham()
         {
-            dataGridViewSanPham.DataSource = xl.GetDanhSachSanPham();
+            var danhSachSanPham = xl.LayDanhSachSanPham();
+            if (danhSachSanPham != null && danhSachSanPham.Count > 0)
+            {
+                dataGridViewSanPham.DataSource = danhSachSanPham;
+            }
+            else
+            {
+                MessageBox.Show("Không có sản phẩm nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void FrmQuanLySanPham_Load(object sender, EventArgs e)
         {
             LoadSanPham();
-            List<DanhMuc> danhMucs = xl.GetDanhSachDanhMucSP();
-            comboBox1.DataSource = danhMucs;
-            comboBox1.DisplayMember = "TenDanhMuc";
-            comboBox1.ValueMember = "DanhMucID";
+            List<DanhMuc> danhMucs = xl.LayDanhSachDanhMucSP();
+            if (danhMucs != null && danhMucs.Count > 0)
+            {
+                comboBox1.DataSource = danhMucs;
+                comboBox1.DisplayMember = "TenDanhMuc";
+                comboBox1.ValueMember = "DanhMucID";
+            }
+            else
+            {
+                MessageBox.Show("Không có danh mục nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -41,8 +58,9 @@ namespace DA_PTPMUDTM
                 MessageBox.Show("Vui lòng nhập tên sản phẩm để tìm kiếm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             var ketQua = xl.TimKiemSanPhamTheoTen(tenSanPham);
-            if(ketQua != null && ketQua.Count > 0)
+            if (ketQua != null && ketQua.Count > 0)
             {
                 dataGridViewSanPham.DataSource = ketQua;
             }
@@ -55,12 +73,14 @@ namespace DA_PTPMUDTM
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null) return;
+
             DanhMuc selectedCategory = (DanhMuc)comboBox1.SelectedItem;
-            List<SanPham> danhSachSanPham = xl.GetDanhSachSanPhamTheoDanhMuc(selectedCategory.TenDanhMuc);
+            var danhSachSanPham = xl.LayDanhSachSanPhamTheoDanhMuc(selectedCategory.TenDanhMuc);
+
             if (danhSachSanPham == null || danhSachSanPham.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy sản phẩm nào thuộc danh mục đã chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadSanPham();
+                LoadSanPham();  // Load lại tất cả sản phẩm nếu không tìm thấy sản phẩm trong danh mục
             }
             else
             {

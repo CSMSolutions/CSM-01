@@ -1,7 +1,0 @@
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\obj\Debug\ThuVien.csproj.AssemblyReference.cache
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\obj\Debug\ThuVien.csproj.CoreCompileInputs.cache
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\bin\Debug\ThuVien.dll.config
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\bin\Debug\ThuVien.dll
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\bin\Debug\ThuVien.pdb
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\obj\Debug\ThuVien.dll
-D:\PTUDTM\CSM\WinFormCSM\ThuVien\obj\Debug\ThuVien.pdb

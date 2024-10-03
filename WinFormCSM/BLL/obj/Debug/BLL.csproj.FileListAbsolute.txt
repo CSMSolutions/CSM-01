@@ -1,0 +1,12 @@
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\BLL.dll
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\BLL.pdb
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\DAL.dll
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\DTO.dll
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\DAL.pdb
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\DTO.pdb
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\bin\Debug\DTO.dll.config
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\obj\Debug\BLL.dll
+D:\PTUDTM\CSM\CSM-01\WinFormCSM\BLL\obj\Debug\BLL.pdb

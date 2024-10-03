@@ -1,4 +1,4 @@
-﻿using frm_DangNhap;
+﻿using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,41 +8,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 
 namespace DA_PTPMUDTM
 {
     public partial class frmDangNhap : Form
     {
+        private BLL_DangNhap xl = new BLL_DangNhap();
         private frmMain _frmMain;
+        private frmQuenMatKhau _frmQuenMatKhau;
         public frmDangNhap()
         {
             InitializeComponent();
-            var ucDangNhap = new UC_DangNhap(this);
-            ucDangNhap.getChangeKQ += UcDangNhap_getChangeKQ;
-            LoadUserControl(ucDangNhap);
         }
 
-        private void UcDangNhap_getChangeKQ(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            _frmMain = new frmMain();
-            _frmMain.Show();
+            string ten = txtTenDN.Text;
+            string mk = txtMatKhau.Text;
+            var kq = xl.KiemTraDangNhap(ten, mk);
+            switch (kq)
+            {
+                case DAL_DangNhap.KetQuaDN.ThanhCong:
+                    MessageBox.Show("Chúc mừng bạn đăng nhập thành công!");
+                    _frmMain = new frmMain();
+                    _frmMain.Show();
+                    this.Hide();
+                    break;
+
+                case DAL_DangNhap.KetQuaDN.SaiThongTin:
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!");
+                    break;
+
+                case DAL_DangNhap.KetQuaDN.KhongPhaiAdmin:
+                    MessageBox.Show("Chỉ có admin mới được phép đăng nhập!");
+                    break;
+
+                case DAL_DangNhap.KetQuaDN.Rong:
+                    MessageBox.Show("Vui lòng không để trống tên đăng nhập và mật khẩu!");
+                    break;
+
+                default:
+                    MessageBox.Show("Đăng nhập thất bại!");
+                    break;
+            }
+        }
+
+        private void labQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            _frmQuenMatKhau = new frmQuenMatKhau();
+            _frmQuenMatKhau.Show();
             this.Hide();
         }
-
-        private void LoadUserControl(UserControl userControl)
+        private bool isXemMatKhau = false;
+        private void pbMatKhau_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
-            userControl.Dock = DockStyle.Fill;
-            this.Controls.Add(userControl);
+            isXemMatKhau = !isXemMatKhau;
+            txtMatKhau.UseSystemPasswordChar = !isXemMatKhau;
         }
-        public void ShowForgotPasswordControl()
-        {
-            LoadUserControl(new UC_QuenMatKhau(this));
-        }
-        public void ShowLoginControl()
-        {
-            LoadUserControl(new UC_DangNhap(this));
-        }
-
     }
 }

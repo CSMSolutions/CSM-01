@@ -1,62 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PTUDTM\\CSM\\WinFormCSM\\",
+  "WorkspaceRootPath": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|d:\\ptudtm\\csm\\winformcsm\\thuvien\\xuly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|solutionrelative:thuvien\\xuly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\uc_quenmatkhau.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\uc_quenmatkhau.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\csm-01\\winformcsm\\da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|d:\\ptudtm\\csm\\winformcsm\\frm_dangnhap\\uc_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|solutionrelative:frm_dangnhap\\uc_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\frmquenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmquenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72FA04E1-C828-419A-BD92-CBD688E4C2B1}|DAL\\DAL.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\dal\\dal_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72FA04E1-C828-419A-BD92-CBD688E4C2B1}|DAL\\DAL.csproj|solutionrelative:dal\\dal_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|d:\\ptudtm\\csm\\winformcsm\\frm_dangnhap\\uc_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|solutionrelative:frm_dangnhap\\uc_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72FA04E1-C828-419A-BD92-CBD688E4C2B1}|DAL\\DAL.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\dal\\dal_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72FA04E1-C828-419A-BD92-CBD688E4C2B1}|DAL\\DAL.csproj|solutionrelative:dal\\dal_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|d:\\ptudtm\\csm\\winformcsm\\da_ptpmudtm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\frmquenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmquenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2826228B-050C-48F1-843E-61B8B83A38B2}|BLL\\BLL.csproj|d:\\ptudtm\\csm\\csm-01\\winformcsm\\bll\\bll_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2826228B-050C-48F1-843E-61B8B83A38B2}|BLL\\BLL.csproj|solutionrelative:bll\\bll_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2826228B-050C-48F1-843E-61B8B83A38B2}|BLL\\BLL.csproj|d:\\ptudtm\\csm\\csm-01\\winformcsm\\bll\\bll_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2826228B-050C-48F1-843E-61B8B83A38B2}|BLL\\BLL.csproj|solutionrelative:bll\\bll_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_DangNhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ThuVien\\BLL_DangNhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|d:\\ptudtm\\csm\\winformcsm\\thuvien\\csm_db.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
-      "RelativeMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|solutionrelative:thuvien\\csm_db.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+      "AbsoluteMoniker": "D:0:0:{26149831-4481-4030-9B5F-E9ED3D726479}|DTO\\DTO.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\dto\\csm.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{26149831-4481-4030-9B5F-E9ED3D726479}|DTO\\DTO.csproj|solutionrelative:dto\\csm.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|d:\\ptudtm\\csm\\winformcsm\\thuvien\\csm_db.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{227B59C3-F955-424A-B345-F212125707CD}|ThuVien\\ThuVien.csproj|solutionrelative:thuvien\\csm_db.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\da_ptpmudtm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C94FDC7-3938-4067-AC00-D6D25342DB6B}|DA_PTPMUDTM\\GUI.csproj|solutionrelative:da_ptpmudtm\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|d:\\ptudtm\\csm\\winformcsm\\frm_dangnhap\\uc_quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|solutionrelative:frm_dangnhap\\uc_quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|d:\\ptudtm\\csm\\winformcsm\\frm_dangnhap\\uc_quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D591CAE9-38A6-4D73-8305-BC5BB1F8E088}|frm_DangNhap\\frm_DangNhap.csproj|solutionrelative:frm_dangnhap\\uc_quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_SanPham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ThuVien\\BLL_SanPham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,28 +70,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UC_QuenMatKhau.Designer.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\UC_QuenMatKhau.Designer.cs",
-              "RelativeDocumentMoniker": "DA_PTPMUDTM\\UC_QuenMatKhau.Designer.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\UC_QuenMatKhau.Designer.cs",
-              "RelativeToolTip": "DA_PTPMUDTM\\UC_QuenMatKhau.Designer.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAiwJcAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "BLL_DangNhap.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\BLL\\BLL_DangNhap.cs",
+              "RelativeDocumentMoniker": "BLL\\BLL_DangNhap.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\BLL\\BLL_DangNhap.cs",
+              "RelativeToolTip": "BLL\\BLL_DangNhap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T12:41:22.926Z",
+              "WhenOpened": "2024-10-03T12:26:54.812Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "BLL_SanPham.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\BLL\\BLL_SanPham.cs",
+              "RelativeDocumentMoniker": "BLL\\BLL_SanPham.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\BLL\\BLL_SanPham.cs",
+              "RelativeToolTip": "BLL\\BLL_SanPham.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wBkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T12:25:39.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmQuenMatKhau.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "RelativeToolTip": "DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwBwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:58:14.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmQuenMatKhau.cs [Design]",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmQuenMatKhau.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmQuenMatKhau.cs [Design]",
+              "RelativeToolTip": "DA_PTPMUDTM\\frmQuenMatKhau.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:41:57.056Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BLL_SanPham.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_SanPham.cs",
+              "RelativeDocumentMoniker": "ThuVien\\BLL_SanPham.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_SanPham.cs",
+              "RelativeToolTip": "ThuVien\\BLL_SanPham.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:32:10.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAL_SanPham.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DAL\\DAL_SanPham.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_SanPham.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DAL\\DAL_SanPham.cs",
+              "RelativeToolTip": "DAL\\DAL_SanPham.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:29:38.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DAL_DangNhap.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DAL\\DAL_DangNhap.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_DangNhap.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DAL\\DAL_DangNhap.cs",
+              "RelativeToolTip": "DAL\\DAL_DangNhap.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T11:17:54.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CSM.dbml",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DTO\\CSM.dbml",
+              "RelativeDocumentMoniker": "DTO\\CSM.dbml",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DTO\\CSM.dbml",
+              "RelativeToolTip": "DTO\\CSM.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2024-10-03T11:16:38.456Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmDangNhap.cs [Design]",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmDangNhap.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs [Design]",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs [Design]",
               "RelativeToolTip": "DA_PTPMUDTM\\frmDangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T11:34:25.847Z",
@@ -95,37 +186,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\Program.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\Program.cs",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\Program.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\Program.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\Program.cs",
               "RelativeToolTip": "DA_PTPMUDTM\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T11:18:31.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T11:18:31.078Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "frmMain.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmMain.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
               "RelativeToolTip": "DA_PTPMUDTM\\frmMain.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAjwBoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T10:23:21.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmMain.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs [Design]",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmMain.cs [Design]",
               "RelativeToolTip": "DA_PTPMUDTM\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T10:18:41.286Z",
@@ -133,74 +223,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\frmDangNhap.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\frmDangNhap.cs",
               "RelativeToolTip": "DA_PTPMUDTM\\frmDangNhap.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T08:43:39.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UC_QuenMatKhau.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_QuenMatKhau.cs",
-              "RelativeDocumentMoniker": "frm_DangNhap\\UC_QuenMatKhau.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_QuenMatKhau.cs",
-              "RelativeToolTip": "frm_DangNhap\\UC_QuenMatKhau.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBMAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T08:31:54.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UC_QuenMatKhau.cs [Design]",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_QuenMatKhau.cs",
-              "RelativeDocumentMoniker": "frm_DangNhap\\UC_QuenMatKhau.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_QuenMatKhau.cs [Design]",
-              "RelativeToolTip": "frm_DangNhap\\UC_QuenMatKhau.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T08:27:31.174Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "CSM_DB.designer.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\CSM_DB.designer.cs",
-              "RelativeDocumentMoniker": "ThuVien\\CSM_DB.designer.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\CSM_DB.designer.cs",
-              "RelativeToolTip": "ThuVien\\CSM_DB.designer.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAowFYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T07:02:52.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CSM_DB.dbml",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\CSM_DB.dbml",
-              "RelativeDocumentMoniker": "ThuVien\\CSM_DB.dbml",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\CSM_DB.dbml",
-              "RelativeToolTip": "ThuVien\\CSM_DB.dbml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2024-10-02T07:02:01.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "App.config",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\App.config",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\App.config",
               "RelativeDocumentMoniker": "DA_PTPMUDTM\\App.config",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\DA_PTPMUDTM\\App.config",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\DA_PTPMUDTM\\App.config",
               "RelativeToolTip": "DA_PTPMUDTM\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -209,41 +249,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "XuLy.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\XuLy.cs",
-              "RelativeDocumentMoniker": "ThuVien\\XuLy.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\ThuVien\\XuLy.cs",
-              "RelativeToolTip": "ThuVien\\XuLy.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAvwEYAAAAxAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "BLL_DangNhap.cs",
+              "DocumentMoniker": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_DangNhap.cs",
+              "RelativeDocumentMoniker": "ThuVien\\BLL_DangNhap.cs",
+              "ToolTip": "D:\\PTUDTM\\CSM\\CSM-01\\WinFormCSM\\ThuVien\\BLL_DangNhap.cs",
+              "RelativeToolTip": "ThuVien\\BLL_DangNhap.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T06:56:03.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_DangNhap.cs",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_DangNhap.cs",
-              "RelativeDocumentMoniker": "frm_DangNhap\\UC_DangNhap.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_DangNhap.cs",
-              "RelativeToolTip": "frm_DangNhap\\UC_DangNhap.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T06:45:58.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UC_DangNhap.cs [Design]",
-              "DocumentMoniker": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_DangNhap.cs",
-              "RelativeDocumentMoniker": "frm_DangNhap\\UC_DangNhap.cs",
-              "ToolTip": "D:\\PTUDTM\\CSM\\WinFormCSM\\frm_DangNhap\\UC_DangNhap.cs [Design]",
-              "RelativeToolTip": "frm_DangNhap\\UC_DangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T05:55:47.846Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-02T06:56:03.654Z"
             }
           ]
         }
