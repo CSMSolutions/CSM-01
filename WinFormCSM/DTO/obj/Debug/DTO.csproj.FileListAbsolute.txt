@@ -1,7 +1,0 @@
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\bin\Debug\DTO.dll.config
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\bin\Debug\DTO.dll
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\bin\Debug\DTO.pdb
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\obj\Debug\DTO.dll
-D:\PTUDTM\CSM\CSM-01\WinFormCSM\DTO\obj\Debug\DTO.pdb
