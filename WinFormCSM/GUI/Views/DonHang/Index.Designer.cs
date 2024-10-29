@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            sideBar1 = new CustomControls.SideBar();
             SuspendLayout();
+            // 
+            // sideBar1
+            // 
+            sideBar1.Location = new Point(-2, -25);
+            sideBar1.Name = "sideBar1";
+            sideBar1.Size = new Size(201, 925);
+            sideBar1.TabIndex = 0;
             // 
             // Index
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1026, 481);
+            ClientSize = new Size(1060, 715);
+            Controls.Add(sideBar1);
             Name = "Index";
             Text = "Index";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private CustomControls.SideBar sideBar1;
     }
 }
