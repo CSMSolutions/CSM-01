@@ -28,18 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            sideBar1 = new CustomControls.SideBar();
+            searchCustomer1 = new CustomControls.SearchCustomer();
             SuspendLayout();
+            // 
+            // sideBar1
+            // 
+            sideBar1.Location = new Point(-2, -25);
+            sideBar1.Name = "sideBar1";
+            sideBar1.Size = new Size(201, 925);
+            sideBar1.TabIndex = 0;
+            // 
+            // searchCustomer1
+            // 
+            searchCustomer1.Location = new Point(205, 87);
+            searchCustomer1.Name = "searchCustomer1";
+            searchCustomer1.Size = new Size(533, 235);
+            searchCustomer1.TabIndex = 1;
             // 
             // Index
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1026, 481);
+            ClientSize = new Size(1126, 679);
+            Controls.Add(searchCustomer1);
+            Controls.Add(sideBar1);
             Name = "Index";
             Text = "Index";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private CustomControls.SideBar sideBar1;
+        private CustomControls.SearchCustomer searchCustomer1;
     }
 }
