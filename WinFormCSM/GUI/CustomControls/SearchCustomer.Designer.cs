@@ -32,8 +32,8 @@
             panel1 = new Panel();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtNumberPhone = new TextBox();
+            txtNameCustomer = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             toolSearchAndRefresh1 = new ToolSearchAndRefresh();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -88,23 +88,23 @@
             label3.TabIndex = 3;
             label3.Text = "Tên Khách Hàng";
             // 
-            // textBox1
+            // txtNumberPhone
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(169, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(431, 43);
-            textBox1.TabIndex = 4;
+            txtNumberPhone.Dock = DockStyle.Fill;
+            txtNumberPhone.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNumberPhone.Location = new Point(169, 3);
+            txtNumberPhone.Name = "txtNumberPhone";
+            txtNumberPhone.Size = new Size(431, 43);
+            txtNumberPhone.TabIndex = 4;
             // 
-            // textBox2
+            // txtNameCustomer
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(169, 52);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(431, 43);
-            textBox2.TabIndex = 5;
+            txtNameCustomer.Dock = DockStyle.Fill;
+            txtNameCustomer.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNameCustomer.Location = new Point(169, 52);
+            txtNameCustomer.Name = "txtNameCustomer";
+            txtNameCustomer.Size = new Size(431, 43);
+            txtNameCustomer.TabIndex = 5;
             // 
             // tableLayoutPanel1
             // 
@@ -112,8 +112,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.57764F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 72.42236F));
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtNumberPhone, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtNameCustomer, 1, 1);
             tableLayoutPanel1.Controls.Add(label3, 0, 1);
             tableLayoutPanel1.Controls.Add(toolSearchAndRefresh1, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Top;
@@ -171,8 +171,8 @@
         private Panel panel1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtNumberPhone;
+        private TextBox txtNameCustomer;
         private TableLayoutPanel tableLayoutPanel1;
         private ToolSearchAndRefresh toolSearchAndRefresh2;
         private TableLayoutPanel tableLayoutPanel2;
