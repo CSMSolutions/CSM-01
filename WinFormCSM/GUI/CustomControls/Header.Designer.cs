@@ -1,13 +1,13 @@
-﻿namespace GUI.Views.DonHang
+﻿namespace GUI.CustomControls
 {
-    partial class Index
+    partial class Header
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,37 +20,39 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            sideBar1 = new CustomControls.SideBar();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // sideBar1
+            // label1
             // 
-            sideBar1.Location = new Point(-2, -25);
-            sideBar1.Name = "sideBar1";
-            sideBar1.Size = new Size(201, 925);
-            sideBar1.TabIndex = 0;
+            label1.AutoSize = true;
+            label1.Location = new Point(68, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
-            // Index
+            // Header
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1126, 679);
-            Controls.Add(sideBar1);
-            Name = "Index";
-            Text = "Index";
+            Controls.Add(label1);
+            Name = "Header";
+            Size = new Size(776, 118);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private CustomControls.SideBar sideBar1;
+        private Label label1;
     }
 }
