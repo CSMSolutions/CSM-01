@@ -42,7 +42,7 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Image = (Image)resources.GetObject("btnRefresh.Image");
             btnRefresh.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRefresh.Location = new Point(158, 5);
+            btnRefresh.Location = new Point(158, 4);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(140, 58);
             btnRefresh.TabIndex = 9;
@@ -60,7 +60,7 @@
             btnFind.ForeColor = Color.White;
             btnFind.Image = (Image)resources.GetObject("btnFind.Image");
             btnFind.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFind.Location = new Point(12, 5);
+            btnFind.Location = new Point(12, 4);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(140, 58);
             btnFind.TabIndex = 8;
@@ -76,7 +76,7 @@
             Controls.Add(btnRefresh);
             Controls.Add(btnFind);
             Name = "ToolSearchAndRefresh";
-            Size = new Size(314, 69);
+            Size = new Size(314, 67);
             ResumeLayout(false);
         }
 

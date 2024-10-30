@@ -35,5 +35,10 @@ namespace GUI.CustomControls
         {
 
         }
+
+        private void SearchCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
