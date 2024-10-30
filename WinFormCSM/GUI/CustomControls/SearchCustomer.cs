@@ -17,7 +17,7 @@ namespace GUI.CustomControls
             InitializeComponent();
 
             toolSearchAndRefresh1.FindClicked += ToolSearchAndRefresh1_FindClicked;
-            toolSearchAndRefresh1.RefreshClicked += ToolSearchAndRefresh1_RefreshClicked;   
+            toolSearchAndRefresh1.RefreshClicked += ToolSearchAndRefresh1_RefreshClicked;
 
         }
 
@@ -30,6 +30,10 @@ namespace GUI.CustomControls
         {
             MessageBox.Show("Find Clicked");
         }
-       
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

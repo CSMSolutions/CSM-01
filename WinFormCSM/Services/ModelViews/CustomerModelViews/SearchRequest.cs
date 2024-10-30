@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Services.ModelViews.CustomerModelViews
 {
-    internal class SearchRequest
+    public class SearchRequest
     {
+        public string CustomerName { get; set; } = "";
+        public string CustomerPhone { get; set; } = "";
     }
 }

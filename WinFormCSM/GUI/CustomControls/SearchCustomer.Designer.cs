@@ -34,8 +34,10 @@
             label3 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
             toolSearchAndRefresh1 = new ToolSearchAndRefresh();
             panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -45,7 +47,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Unicode MS", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(178, 0);
+            label1.Location = new Point(68, 0);
             label1.Name = "label1";
             label1.Size = new Size(433, 38);
             label1.TabIndex = 0;
@@ -59,68 +61,89 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(743, 50);
+            panel1.Size = new Size(522, 50);
             panel1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI Symbol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(62, 87);
+            label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(172, 31);
+            label2.Size = new Size(196, 49);
             label2.TabIndex = 2;
             label2.Text = "Số Điện Thoại";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI Symbol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(62, 153);
+            label3.Location = new Point(3, 49);
             label3.Name = "label3";
-            label3.Size = new Size(194, 31);
+            label3.Size = new Size(196, 49);
             label3.TabIndex = 3;
             label3.Text = "Tên Khách Hàng";
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(287, 80);
+            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(205, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(324, 38);
+            textBox1.Size = new Size(314, 43);
             textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            textBox2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(287, 146);
+            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(205, 52);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(324, 38);
+            textBox2.Size = new Size(314, 43);
             textBox2.TabIndex = 5;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.8257561F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.1742439F));
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(textBox2, 1, 1);
+            tableLayoutPanel1.Controls.Add(label3, 0, 1);
+            tableLayoutPanel1.Controls.Add(toolSearchAndRefresh1, 1, 2);
+            tableLayoutPanel1.Dock = DockStyle.Left;
+            tableLayoutPanel1.Location = new Point(0, 50);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(522, 185);
+            tableLayoutPanel1.TabIndex = 7;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // toolSearchAndRefresh1
             // 
-            toolSearchAndRefresh1.Location = new Point(219, 212);
+            toolSearchAndRefresh1.Dock = DockStyle.Top;
+            toolSearchAndRefresh1.Location = new Point(205, 101);
             toolSearchAndRefresh1.Name = "toolSearchAndRefresh1";
-            toolSearchAndRefresh1.Size = new Size(392, 86);
+            toolSearchAndRefresh1.Size = new Size(314, 86);
             toolSearchAndRefresh1.TabIndex = 6;
             // 
             // SearchCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(toolSearchAndRefresh1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
             Name = "SearchCustomer";
-            Size = new Size(743, 311);
+            Size = new Size(522, 235);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -131,6 +154,8 @@
         private Label label3;
         private TextBox textBox1;
         private TextBox textBox2;
+        private TableLayoutPanel tableLayoutPanel1;
+        private ToolSearchAndRefresh toolSearchAndRefresh2;
         private ToolSearchAndRefresh toolSearchAndRefresh1;
     }
 }
