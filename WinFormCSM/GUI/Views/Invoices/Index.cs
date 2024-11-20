@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess;
 using Models;
 using Services.Services;
 
@@ -20,30 +21,57 @@ namespace GUI.Views.DonHang
         {
             InitializeComponent();
             _invoiceServices = new InvoiceServices();
+
             LoadDataToGridView().ConfigureAwait(false);
+
             searchCustomer1.OnCustomerSearchCompleted += SearchCustomer1_OnCustomerSearchCompleted;
             toolSearchAndRefresh1.FindClicked += ToolSearchAndRefresh1_FindClicked;
             toolSearchAndRefresh1.RefreshClicked += ToolSearchAndRefresh1_RefreshClicked;
-
-
+            dtGInvoice.CellClick += DtGInvoice_CellClick;
 
             btnApprove.Enabled = false;
             btnExport.Enabled = false;
             btnReject.Enabled = false;
 
-            dtGInvoice.CellClick += DtGInvoice_CellClick;
             LoadStatusOptions();
 
         }
+        private async Task LoadDataInvoicesDetail()
+        {
+            try
+            {
+                var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
+                dtGInvoice.DataSource = invoices;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
+            }
+        }
 
-        private void DtGInvoice_CellClick(object? sender, DataGridViewCellEventArgs e)
+        private async void DtGInvoice_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 btnApprove.Enabled = true;
                 btnExport.Enabled = true;
                 btnReject.Enabled = true;
+
+                // Lấy ID hóa đơn từ hàng được chọn
+                int invoiceId = Convert.ToInt32(dtGInvoice.Rows[e.RowIndex].Cells["DonHangId"].Value);
+
+                // Gọi phương thức lấy dữ liệu hóa đơn chi tiết
+                var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
+                if (invoiceDetails != null) {
+                    txtAddress.Text = invoiceDetails.DiaChiGiaoHang;
+                    txtTotal.Text = invoiceDetails.TongTien.ToString();
+
+                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietDonHangs;
+                }
+
+                
             }
+
         }
 
         private void LoadStatusOptions()
@@ -155,6 +183,11 @@ namespace GUI.Views.DonHang
         }
 
         private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtGDetaiInvoices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

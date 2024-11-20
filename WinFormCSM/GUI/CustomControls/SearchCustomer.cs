@@ -15,7 +15,6 @@ namespace GUI.CustomControls
 {
     public partial class SearchCustomer : UserControl
     {
-        // Này là để truyền dữ liệu khách hàng đi ở bất cứ form nào, chỉ cần gọi sự kiện này
         public event Action<List<NguoiDung>>? OnCustomerSearchCompleted;
 
         public SearchCustomer()
@@ -45,14 +44,14 @@ namespace GUI.CustomControls
 
                 if (!string.IsNullOrEmpty(phoneNumber))
                 {
-                    query = query.Where(nd => nd.SoDienThoai.Contains(phoneNumber));
+                    query = query.Where(nd => nd.SoDienThoai!.Contains(phoneNumber));
                 }
 
                 if (!string.IsNullOrEmpty(customerName))
                 {
                     if (!string.IsNullOrEmpty(phoneNumber))
                     {
-                        query = query.Where(nd => nd.SoDienThoai != null && nd.SoDienThoai.Contains(phoneNumber));
+                        query = query.Where(nd => nd.SoDienThoai != null && nd.SoDienThoai == phoneNumber);
                     }
                     query = query.Where(nd => nd.HoTen.Contains(customerName));
                 }

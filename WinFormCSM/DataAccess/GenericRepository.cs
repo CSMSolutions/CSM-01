@@ -6,6 +6,15 @@ namespace DataAccess
 {
     public class GenericRepository<T> where T : class
     {
+        public DbSet<T> Entities
+        {
+            get
+            {
+                var context = new CSMContext();
+                return context.Set<T>();
+            }
+        }
+
         public void Delete(object id)
         {
             using var context = new CSMContext();
