@@ -28,27 +28,36 @@
 
 <p>Nghiệp vụ</p>
 
-| STT | Nghiệp vụ | Phân công  |
+| STT | Công việc | Phân công  |
 |----------------|--------------------|--------------------|
-|  1  |  Tìm kiếm quần áo/Sort |  Mai |
-|  2  |  Đăng nhập đăng ký | Mai |
-|  3  |  Xem thông tin quần áo[Trang chủ, trang giới thiệu, trang xem toàn bộ quần áo(có bộ lọc),Xem chi tiết sản phẩm, đánh giá sản phẩm, xem chi tiết đơn hàng]  |  Văn |
-|  4  |  Quản lý người dùng [update profile cá nhân] | Quân |
-|  5  |  Quản lý đơn hàng / Thanh toán [Xem thông tin đơn hàng, thanh toán  | Quân |
-|  6  |  Đánh giá | Quân |
+|  1  |  Đăng ký đăng nhập  | Mai |
+|  2  |  Tìm kiếm sản phẩm |  Mai |
+|  3  |  Hiển thị danh sách sản phẩm, chi tiết sản phẩm | Mai |
+|  4  |  Sắp xếp, lọc sản phẩm | Mai |
+|  5  |  CRUD giỏ hàng | Mai |
+|  6  |  Thanh toán | Mai |
+|  7  |  Đánh giá sản phẩm | Mai |
+|  8  |  Xem đơn hàng | Văn |
+|  9  |  Xem lịch sử mua hàng | Quân |
+|  10  |  KNN(AI) | Mai |
+
 
 
 
 <p>App: Winform </p>
 <p>Ngôn ngữ: C# </p>
 
-| STT | Nghiệp vụ | Phân công  |
+| STT | Công việc | Phân công  |
 |----------------|--------------------|--------------------|
-|  1  |  Đăng nhập/đăng xuất | Mai  |
-|  2  |  Quản lý người dùng [CRUD người dùng] | Mai |
-|  3  |  Quản lý sản phẩm + AI[CRUD Brand, CRUD Items] | Văn |
-|  4  |  Thống kế/ báo cáo  | Văn |
-|  5  |  Quản lý đơn hàng / Thanh toán  | Quân |
+|  1  |  Đăng nhập/đăng xuất | Văn  |
+|  2  |  Quản lý người dùng [CRUD người dùng] | Văn |
+|  3  |  Quản lý sản phẩm [CRUD sản phẩm] | Văn |
+|  4  |  Quản lý danh mục [CRUD danh mục] | Văn |
+|  5  |  Quản lý size [CRUD size] | Quân |
+|  6  |  Quản lý màu [CRUD màu] | Quân |
+|  7  |  Thống kế/ báo cáo, xuất file  | Quân |
+|  8  |  Quản lý đơn hàng [CRUD đơn hàng]| Quân |
+|  9  |  Tìm kiếm/ phân trang  | Mai |
 
 # Chức năng
 
