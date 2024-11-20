@@ -15,7 +15,9 @@ public partial class ChiTietDonHang
 
     public decimal DonGia { get; set; }
 
+    public int? TinhTrangDanhGia { get; set; }
+
     public virtual DonHang DonHang { get; set; } = null!;
 
-    public virtual SanPham SanPham { get; set; } = null!;
+    public virtual ChiTietSanPham SanPham { get; set; } = null!;
 }

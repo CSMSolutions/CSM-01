@@ -16,7 +16,7 @@ namespace Services
         public async Task<bool> Login(LoginRequest request)
         {
             NguoiDung? nguoiDung
-                = await _nguoiDungRepository.FindAsync(x => x.TenDangNhap == request.Username && x.MatKhau == request.Password);
+                = await _nguoiDungRepository.FindAsync(x => x.TenDangNhap == request.Username && x.MatKhau == request.Password && x.VaiTro == "admin");
             return nguoiDung is not null;
         }
     }
