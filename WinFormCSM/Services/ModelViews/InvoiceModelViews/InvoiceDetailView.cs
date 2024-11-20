@@ -27,9 +27,6 @@ namespace Services.ModelViews.Invoice
             invoiceDetailView.TongTien = invoiceDetail.DonHang.TongTien;
             invoiceDetailView.TinhTrangDonHang = invoiceDetail.DonHang.TinhTrangDonHang;
             invoiceDetailView.NgayDatHang = invoiceDetail.DonHang.NgayDatHang;
-            invoiceDetailView.DiaChiGiaoHang = invoiceDetail.DonHang.DiaChiGiaoHang;
-            invoiceDetailView.PhuongThucThanhToan = invoiceDetail.DonHang.ThanhToans.FirstOrDefault()?.HinhThucThanhToan;
-            invoiceDetailView.TinhTrangThanhToan = invoiceDetail.DonHang.ThanhToans.FirstOrDefault()?.TinhTrangThanhToan;
             return invoiceDetailView;
         }
     }

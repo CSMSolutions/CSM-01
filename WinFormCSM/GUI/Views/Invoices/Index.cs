@@ -63,7 +63,6 @@ namespace GUI.Views.DonHang
                 // Gọi phương thức lấy dữ liệu hóa đơn chi tiết
                 var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
                 if (invoiceDetails != null) {
-                    txtAddress.Text = invoiceDetails.DiaChiGiaoHang;
                     txtTotal.Text = invoiceDetails.TongTien.ToString();
 
                     dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietDonHangs;

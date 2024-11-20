@@ -30,8 +30,7 @@ namespace Services.Services
                 KhachHang = d.NguoiDung.HoTen,
                 TongTien = d.TongTien,
                 TinhTrangDonHang = d.TinhTrangDonHang,
-                NgayDatHang = d.NgayDatHang,
-                DiaChiGiaoHang = d.DiaChiGiaoHang
+                NgayDatHang = d.NgayDatHang
             }).ToList();
         }
 
@@ -50,8 +49,7 @@ namespace Services.Services
                 DonHangId = d.DonHangId,
                 TongTien = d.TongTien,
                 TinhTrangDonHang = d.TinhTrangDonHang,
-                NgayDatHang = d.NgayDatHang,
-                DiaChiGiaoHang = d.DiaChiGiaoHang
+                NgayDatHang = d.NgayDatHang
             }).ToList();
         }
 
