@@ -1,12 +1,8 @@
-﻿using Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess;
+﻿using DataAccess;
 using Microsoft.EntityFrameworkCore;
-
+using Models;
+using Services.ModelViews.Invoice;
+using Services.ModelViews.ProductModelViews;
 
 namespace Services.Services
 {
@@ -18,91 +14,70 @@ namespace Services.Services
         {
             _donHangRepository = new GenericRepository<DonHang>();
         }
-        public async Task<List<object>> GetInvoicesWithDetailsAsync()
+
+        public async Task<List<DonHang>> GetInvoicesWithDetailsAsync()
         {
-            using var context = new CSMContext();
-
-            var invoices = await context.DonHangs
-                .Include(d => d.NguoiDung) // Liên kết với người dùng
-                .Include(d => d.ThanhToans) // Liên kết với thông tin thanh toán
-                .Include(d => d.ChiTietDonHangs) // Liên kết với chi tiết đơn hàng
-                .ThenInclude(ct => ct.SanPham) // Liên kết với sản phẩm trong chi tiết đơn hàng
-                .Select(static d => new
-                {
-                    d.DonHangId,
-                    KhachHang = d.NguoiDung.HoTen,
-                    d.TongTien,
-                    d.TinhTrangDonHang,
-                    d.NgayDatHang,
-                    DiaChiGiaoHang = d.DiaChiGiaoHang,
-                    HinhThucThanhToan = d.ThanhToans.FirstOrDefault().HinhThucThanhToan,
-                    TinhTrangThanhToan = d.ThanhToans.FirstOrDefault().TinhTrangThanhToan,
-                    SoLuongSanPham = d.ChiTietDonHangs.Sum(ct => ct.SoLuong),
-                })
-                .ToListAsync();
-
-            return invoices.Cast<object>().ToList();
+            var invoices = await _donHangRepository.GetAllAsync();
+            return invoices;
         }
-        public async Task<List<object>> GetInvoicesByCustomerIdAsync(int customerId)
+
+        public async Task<List<InvoiceDetailView>> GetInvoicesByCustomerIdAsync(int customerId)
         {
-            using var context = new CSMContext();
-
-            var invoices = await context.DonHangs
-                .Where(d => d.NguoiDungId == customerId)
-                .Select(d => new
-                {
-                    d.DonHangId,
-                    d.TongTien,
-                    d.TinhTrangDonHang,
-                    d.NgayDatHang,
-                    d.DiaChiGiaoHang
-                })
-                .ToListAsync();
-
-            return invoices.Cast<object>().ToList();
+            var invoices = await _donHangRepository.FindListAsync(d => d.NguoiDungId == customerId);
+            return invoices.Select(d => new InvoiceDetailView
+            {
+                DonHangId = d.DonHangId,
+                KhachHang = d.NguoiDung.HoTen,
+                TongTien = d.TongTien,
+                TinhTrangDonHang = d.TinhTrangDonHang,
+                NgayDatHang = d.NgayDatHang,
+                DiaChiGiaoHang = d.DiaChiGiaoHang
+            }).ToList();
         }
-        public async Task<List<object>> SearchInvoicesAsync(int? invoiceId, string? status, DateTime? orderDate)
+
+        public async Task<List<InvoiceDetailView>> SearchInvoicesAsync(int? invoiceId, string? status, DateTime? orderDate)
         {
-            using var context = new CSMContext();
+            var invoices = await _donHangRepository.GetAllAsync();
 
-            var query = context.DonHangs.AsQueryable();
+            var filteredInvoices = invoices
+                .Where(d => !invoiceId.HasValue || d.DonHangId == invoiceId.Value)
+                .Where(d => string.IsNullOrEmpty(status) || d.TinhTrangDonHang == status)
+                .Where(d => !orderDate.HasValue || (d.NgayDatHang.HasValue && d.NgayDatHang.Value.Date == orderDate.Value.Date))
+                .ToList();
 
-            if (invoiceId.HasValue)
+            return filteredInvoices.Select(d => new InvoiceDetailView
             {
-                query = query.Where(d => d.DonHangId == invoiceId.Value);
-            }
-
-            if (!string.IsNullOrEmpty(status))
-            {
-                query = query.Where(d => d.TinhTrangDonHang == status);
-            }
-
-            if (orderDate.HasValue)
-            {
-                query = query.Where(d => d.NgayDatHang.HasValue && d.NgayDatHang.Value.Date == orderDate.Value.Date);
-            }
-            var invoices = await query.Select(d => new
-            {
-                d.DonHangId,
-                d.TongTien,
-                d.TinhTrangDonHang,
-                d.NgayDatHang,
-                d.DiaChiGiaoHang
-            }).ToListAsync();
-
-            return invoices.Cast<object>().ToList();
+                DonHangId = d.DonHangId,
+                TongTien = d.TongTien,
+                TinhTrangDonHang = d.TinhTrangDonHang,
+                NgayDatHang = d.NgayDatHang,
+                DiaChiGiaoHang = d.DiaChiGiaoHang
+            }).ToList();
         }
+
+
+
         public async Task UpdateInvoiceStatusAsync(int invoiceId, string newStatus)
         {
-            using var context = new CSMContext();
-            var invoice = await context.DonHangs.FindAsync(invoiceId);
-
+            var invoice = await _donHangRepository.GetByIdAsync(invoiceId);
             if (invoice != null)
             {
                 invoice.TinhTrangDonHang = newStatus;
-                await context.SaveChangesAsync();
+                await _donHangRepository.UpdateAsync(invoice);
+            }
+            else
+            {
+                throw new KeyNotFoundException($"Invoice with ID {invoiceId} not found.");
             }
         }
 
+        public async Task<DonHang> GetDetailedInvoicesAsync(int invoiceId)
+        {
+            var invoices = await _donHangRepository.Entities.Include("ChiTietDonHangs")
+                .Where(_=>_.DonHangId == invoiceId).FirstOrDefaultAsync();
+            return invoices;
+
+            
+        }
     }
 }
