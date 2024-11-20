@@ -1,6 +1,6 @@
-﻿namespace GUI.Views.DonHang
+﻿namespace GUI.Views.Invoices
 {
-    partial class Index
+    partial class Detail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // Index
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(644, 69);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Detail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1026, 481);
-            Name = "Index";
-            Text = "Index";
+            ClientSize = new Size(1038, 727);
+            Controls.Add(dataGridView1);
+            Name = "Detail";
+            Text = "Detail";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridView1;
     }
 }

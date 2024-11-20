@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Views.DonHang
+namespace GUI.Views.Invoices
 {
-    public partial class Index : Form
+    public partial class Detail : Form
     {
-        public Index()
+        public Detail()
         {
             InitializeComponent();
         }
