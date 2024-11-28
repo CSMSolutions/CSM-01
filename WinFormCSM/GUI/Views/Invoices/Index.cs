@@ -38,15 +38,10 @@ namespace GUI.Views.DonHang
         }
         private async Task LoadDataInvoicesDetail()
         {
-            try
-            {
+
                 var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
                 dtGInvoice.DataSource = invoices;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
-            }
+          
         }
 
         private async void DtGInvoice_CellClick(object? sender, DataGridViewCellEventArgs e)
@@ -57,16 +52,14 @@ namespace GUI.Views.DonHang
                 btnExport.Enabled = true;
                 btnReject.Enabled = true;
 
-                // Lấy ID hóa đơn từ hàng được chọn
                 int invoiceId = Convert.ToInt32(dtGInvoice.Rows[e.RowIndex].Cells["DonHangId"].Value);
 
-                // Gọi phương thức lấy dữ liệu hóa đơn chi tiết
                 var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
                 if (invoiceDetails != null) {
                     txtAddress.Text = invoiceDetails.DiaChiGiaoHang;
                     txtTotal.Text = invoiceDetails.TongTien.ToString();
 
-                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietDonHangs;
+                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietSanPhams;
                 }
 
                 
@@ -128,7 +121,7 @@ namespace GUI.Views.DonHang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
+                MessageBox.Show($"Message: {ex.Message}\nInnerException: {ex.InnerException?.Message}\nStackTrace: {ex.StackTrace}");
             }
         }
 

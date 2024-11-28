@@ -1,17 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Models;
 
 namespace Services.ModelViews.ProductModelViews
 {
     public class ProductDetailView
     {
+        public int ChiTietSanPhamId { get; set; }
+        public int SanPhamId { get; set; }
         public string TenSanPham { get; set; }
+        public string SizeName { get; set; }
+        public string MauName { get; set; }
+        public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
-        public int SoLuongTonKho { get; set; }
-        public decimal GiaTien { get; set; }
-        public decimal TongTienSanPham { get; set; }
+        public decimal ThanhTien { get; set; }
+        public int? TinhTrangDanhGia { get; set; }
+
+        public static ProductDetailView Convert(ChiTietDonHang chiTiet)
+        {
+            return new ProductDetailView
+            {
+                ChiTietSanPhamId = chiTiet.SanPhamId,  // SanPhamId trong ChiTietDonHang trỏ đến ChiTietSanPhamId
+                SanPhamId = chiTiet.SanPham.SanPhamId,
+                TenSanPham = chiTiet.SanPham.SanPham?.TenSanPham ?? "N/A",
+                SizeName = chiTiet.SanPham.Size?.SizeName ?? "N/A",
+                MauName = chiTiet.SanPham.Mau?.MauName ?? "N/A",
+                DonGia = chiTiet.DonGia,
+                SoLuong = chiTiet.SoLuong,
+                ThanhTien = chiTiet.SoLuong * chiTiet.DonGia,
+                TinhTrangDanhGia = chiTiet.TinhTrangDanhGia
+            };
+        }
     }
 }

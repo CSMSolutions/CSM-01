@@ -7,11 +7,11 @@ public partial class DonHang
 {
     public int DonHangId { get; set; }
 
-    public int NguoiDungId { get; set; }
+    public int NguoiDungID { get; set; }
 
-    public int? NhanVienId { get; set; }
+    public int NhanVienID { get; set; } 
 
-    public int DiaChiId { get; set; }
+    public int DiaChiId { get; set; } 
 
     public decimal TongTien { get; set; }
 
@@ -27,9 +27,9 @@ public partial class DonHang
 
     public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
 
-    public virtual ThongTinGiaoHang DiaChi { get; set; } = null!;
-
+    public virtual ThongTinGiaoHang? DiaChi { get; set; }
     public virtual NguoiDung NguoiDung { get; set; } = null!;
 
     public virtual NguoiDung? NhanVien { get; set; }
 }
+

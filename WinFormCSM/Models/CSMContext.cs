@@ -128,8 +128,8 @@ public partial class CSMContext : DbContext
             entity.Property(e => e.NgayThanhToan)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.NguoiDungId).HasColumnName("NguoiDungID");
-            entity.Property(e => e.NhanVienId).HasColumnName("NhanVienID");
+            entity.Property(e => e.NguoiDungID).HasColumnName("NguoiDungID");
+            entity.Property(e => e.NhanVienID).HasColumnName("NhanVienID");
             entity.Property(e => e.TinhTrangDonHang).HasMaxLength(50);
             entity.Property(e => e.TinhTrangThanhToan).HasMaxLength(50);
             entity.Property(e => e.TongTien).HasColumnType("decimal(18, 2)");
@@ -140,12 +140,12 @@ public partial class CSMContext : DbContext
                 .HasConstraintName("FK__DonHang__DiaChiI__6A30C649");
 
             entity.HasOne(d => d.NguoiDung).WithMany(p => p.DonHangNguoiDungs)
-                .HasForeignKey(d => d.NguoiDungId)
+                .HasForeignKey(d => d.NguoiDungID)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__DonHang__NguoiDu__68487DD7");
 
             entity.HasOne(d => d.NhanVien).WithMany(p => p.DonHangNhanViens)
-                .HasForeignKey(d => d.NhanVienId)
+                .HasForeignKey(d => d.NhanVienID)
                 .HasConstraintName("FK__DonHang__NhanVie__693CA210");
         });
 
