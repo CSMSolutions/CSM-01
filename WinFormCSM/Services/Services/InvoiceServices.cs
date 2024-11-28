@@ -16,20 +16,20 @@ namespace Services.Services
 
         public async Task<List<InvoiceDetailView>> GetInvoicesWithDetailsAsync()
         {
-            var invoices = await _donHangRepository.Entities
-                .Include(d => d.NguoiDung) 
-                .Include(d => d.NhanVien)
-                .Include(d => d.DiaChi) 
-                .Include(d => d.ChiTietDonHangs) 
-                .ThenInclude(c => c.SanPham) 
-                .ToListAsync();
+            var invoices = await _donHangRepository.GetAllAsync();
+                //.Include(d => d.NguoiDung) 
+                //.Include(d => d.NhanVien)
+                //.Include(d => d.DiaChi) 
+                //.Include(d => d.ChiTietDonHangs) 
+                //.ThenInclude(c => c.SanPham) 
+                //.ToListAsync();
 
             return invoices.Select(d => InvoiceDetailView.Convert(d)).ToList();
         }
 
         public async Task<List<InvoiceDetailView>> GetInvoicesByCustomerIdAsync(int customerId)
         {
-            var invoices = await _donHangRepository.FindListAsync(d => d.NguoiDungID == customerId);
+            var invoices = await _donHangRepository.FindListAsync(d => d.NguoiDungId == customerId);
             return invoices.Select(d => new InvoiceDetailView
             {
                 DonHangId = d.DonHangId,

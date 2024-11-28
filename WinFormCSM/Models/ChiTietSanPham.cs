@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 
 namespace Models;
@@ -7,7 +8,7 @@ public partial class ChiTietSanPham
 {
     public int ChiTietSanPhamId { get; set; }
 
-    public int SanPhamId { get; set; }
+    public int? SanPhamId { get; set; }
 
     public int? SizeId { get; set; }
 

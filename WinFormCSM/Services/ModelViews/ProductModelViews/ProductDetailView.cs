@@ -6,7 +6,7 @@ namespace Services.ModelViews.ProductModelViews
     public class ProductDetailView
     {
         public int ChiTietSanPhamId { get; set; }
-        public int SanPhamId { get; set; }
+        public int? SanPhamId { get; set; }
         public string TenSanPham { get; set; }
         public string SizeName { get; set; }
         public string MauName { get; set; }
