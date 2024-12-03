@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Services.ModelViews.Invoice;
-using Services.ModelViews.ProductModelViews;
 
 namespace Services.Services
 {
@@ -15,10 +14,17 @@ namespace Services.Services
             _donHangRepository = new GenericRepository<DonHang>();
         }
 
-        public async Task<List<DonHang>> GetInvoicesWithDetailsAsync()
+        public async Task<List<InvoiceDetailView>> GetInvoicesWithDetailsAsync()
         {
             var invoices = await _donHangRepository.GetAllAsync();
-            return invoices;
+                //.Include(d => d.NguoiDung) 
+                //.Include(d => d.NhanVien)
+                //.Include(d => d.DiaChi) 
+                //.Include(d => d.ChiTietDonHangs) 
+                //.ThenInclude(c => c.SanPham) 
+                //.ToListAsync();
+
+            return invoices.Select(d => InvoiceDetailView.Convert(d)).ToList();
         }
 
         public async Task<List<InvoiceDetailView>> GetInvoicesByCustomerIdAsync(int customerId)
@@ -36,7 +42,11 @@ namespace Services.Services
 
         public async Task<List<InvoiceDetailView>> SearchInvoicesAsync(int? invoiceId, string? status, DateTime? orderDate)
         {
-            var invoices = await _donHangRepository.GetAllAsync();
+            var invoices = await _donHangRepository.Entities
+                .Include(d => d.NguoiDung)
+                .Include(d => d.DiaChi)
+                .Include(d => d.ChiTietDonHangs)
+                .ToListAsync();
 
             var filteredInvoices = invoices
                 .Where(d => !invoiceId.HasValue || d.DonHangId == invoiceId.Value)
@@ -53,8 +63,6 @@ namespace Services.Services
             }).ToList();
         }
 
-
-
         public async Task UpdateInvoiceStatusAsync(int invoiceId, string newStatus)
         {
             var invoice = await _donHangRepository.GetByIdAsync(invoiceId);
@@ -69,13 +77,19 @@ namespace Services.Services
             }
         }
 
-        public async Task<DonHang> GetDetailedInvoicesAsync(int invoiceId)
+        public async Task<InvoiceDetailView> GetDetailedInvoicesAsync(int invoiceId)
         {
-            var invoices = await _donHangRepository.Entities.Include("ChiTietDonHangs")
-                .Where(_=>_.DonHangId == invoiceId).FirstOrDefaultAsync();
-            return invoices;
+            var invoice = await _donHangRepository.Entities
+                .Include(d => d.NguoiDung)
+                .Include(d => d.DiaChi)
+                .Include(d => d.ChiTietDonHangs)
+                .ThenInclude(c => c.SanPham)
+                .FirstOrDefaultAsync(d => d.DonHangId == invoiceId);
 
-            
+            if (invoice == null)
+                throw new KeyNotFoundException($"Invoice with ID {invoiceId} not found.");
+
+            return InvoiceDetailView.Convert(invoice);
         }
     }
 }
