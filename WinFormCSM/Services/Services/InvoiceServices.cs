@@ -91,5 +91,27 @@ namespace Services.Services
 
             return InvoiceDetailView.Convert(invoice);
         }
+        public async Task<List<DonHang>> GetOrdersByDateAsync(DateTime? startDate, DateTime? endDate)
+        {
+            var query = _donHangRepository.Entities.AsQueryable();
+
+            if (startDate.HasValue)
+                query = query.Where(d => d.NgayDatHang >= startDate.Value);
+
+            if (endDate.HasValue)
+                query = query.Where(d => d.NgayDatHang <= endDate.Value);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<Dictionary<int, decimal>> GetMonthlyRevenueAsync(int year)
+        {
+            return await _donHangRepository.Entities
+                .Where(d => d.NgayDatHang.HasValue && d.NgayDatHang.Value.Year == year)
+                .GroupBy(d => d.NgayDatHang.Value.Month)
+                .Select(g => new { Month = g.Key, Revenue = g.Sum(d => d.TongTien) })
+                .ToDictionaryAsync(g => g.Month, g => g.Revenue);
+        }
+
     }
 }

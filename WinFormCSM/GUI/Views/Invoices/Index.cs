@@ -150,7 +150,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "đã xác nhận");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Đã Xác Nhận");
                 await LoadDataToGridView();
             }
         }
@@ -160,7 +160,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "đã giao hàng");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Đang Vận Chuyển");
                 await LoadDataToGridView();
             }
         }
@@ -170,7 +170,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "từ chối");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Từ chối");
                 await LoadDataToGridView();
             }
         }
