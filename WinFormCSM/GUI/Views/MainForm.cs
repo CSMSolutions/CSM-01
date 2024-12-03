@@ -36,11 +36,6 @@ namespace GUI.Views
             childForm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new DonHang.Index(), null);
-        }
-
         private void button3_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new DonHang.Index(), null);
@@ -59,6 +54,11 @@ namespace GUI.Views
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ProductView(), null);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Statistical.index(), null);
         }
     }
 }
