@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Models;
-
+﻿namespace Models;
 public partial class Size
 {
     public int SizeId { get; set; }

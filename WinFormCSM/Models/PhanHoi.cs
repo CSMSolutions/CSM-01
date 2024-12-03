@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Models;
 
 namespace Models;
-
 public partial class PhanHoi
 {
     public int PhanHoiId { get; set; }

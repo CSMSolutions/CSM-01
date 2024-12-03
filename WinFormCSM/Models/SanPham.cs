@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Models;
+﻿namespace Models;
 
 public partial class SanPham
 {
@@ -18,6 +15,8 @@ public partial class SanPham
     public int? DanhMucId { get; set; }
 
     public bool? KichHoat { get; set; }
+
+    public virtual ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; } = new List<ChiTietKhuyenMai>();
 
     public virtual ICollection<ChiTietSanPham> ChiTietSanPhams { get; set; } = new List<ChiTietSanPham>();
 

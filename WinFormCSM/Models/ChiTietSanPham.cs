@@ -1,6 +1,4 @@
 ﻿using Models;
-using System;
-using System.Collections.Generic;
 
 namespace Models;
 
@@ -15,6 +13,8 @@ public partial class ChiTietSanPham
     public int? MauId { get; set; }
 
     public decimal Gia { get; set; }
+
+    public decimal? GiaDuocGiam { get; set; }
 
     public int SoLuongTonKho { get; set; }
 

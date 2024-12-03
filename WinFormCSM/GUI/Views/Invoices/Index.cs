@@ -39,9 +39,9 @@ namespace GUI.Views.DonHang
         private async Task LoadDataInvoicesDetail()
         {
 
-                var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
-                dtGInvoice.DataSource = invoices;
-          
+            var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
+            dtGInvoice.DataSource = invoices;
+
         }
 
         private async void DtGInvoice_CellClick(object? sender, DataGridViewCellEventArgs e)
@@ -55,13 +55,14 @@ namespace GUI.Views.DonHang
                 int invoiceId = Convert.ToInt32(dtGInvoice.Rows[e.RowIndex].Cells["DonHangId"].Value);
 
                 var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
-                if (invoiceDetails != null) {
+                if (invoiceDetails != null)
+                {
                     txtTotal.Text = invoiceDetails.TongTien.ToString();
 
                     dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietSanPhams;
                 }
 
-                
+
             }
 
         }
@@ -180,6 +181,11 @@ namespace GUI.Views.DonHang
         }
 
         private void dtGDetaiInvoices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void sideBar1_Load(object sender, EventArgs e)
         {
 
         }
