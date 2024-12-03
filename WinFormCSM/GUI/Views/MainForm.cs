@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Views.Products;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +44,21 @@ namespace GUI.Views
         private void button3_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new DonHang.Index(), null);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                new LoginForm().Show();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ProductView(), null);
         }
     }
 }
