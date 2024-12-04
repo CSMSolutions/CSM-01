@@ -247,6 +247,7 @@
             button10.TabIndex = 3;
             button10.Text = "Thêm sản phẩm mới";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 

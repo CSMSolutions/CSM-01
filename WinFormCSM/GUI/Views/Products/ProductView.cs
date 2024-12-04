@@ -10,36 +10,9 @@ namespace GUI.Views.Products
         {
             InitializeComponent();
             productService = new ProductService();
-            ConfigureDataGridView();
             _ = LoadData();
-        }
-
-        // Cấu hình DataGridView
-        private void ConfigureDataGridView()
-        {
-            // Thêm cột chỉnh sửa (Button)
-            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn
-            {
-                Name = "EditButton",
-                HeaderText = "Chỉnh sửa",
-                Text = "Sửa",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView1.Columns.Add(editButtonColumn);
-
-            DataGridViewButtonColumn activateButtonColumn = new DataGridViewButtonColumn
-            {
-                Name = "ActivateButton",
-                HeaderText = "Kích hoạt",
-                Text = "Kích hoạt",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView1.Columns.Add(activateButtonColumn);
-
-            // Sự kiện CellClick để xử lý các nút
             dataGridView1.CellClick += DataGridView1_CellClick;
         }
-
 
         // Tải dữ liệu
         private async Task LoadData()
@@ -101,23 +74,28 @@ namespace GUI.Views.Products
             }
         }
 
-        // Hàm chỉnh sửa sản phẩm
         private void EditProduct(int productId)
         {
-            MessageBox.Show($"Chỉnh sửa sản phẩm ID: {productId}");
-            // Triển khai logic chỉnh sửa (mở form, cập nhật dữ liệu, v.v.)
+            UpdateProductView f = new(productId);
+            f.ShowDialog();
+            _ = LoadData();
         }
 
-        // Hàm bật/tắt kích hoạt
         private async void ToggleActivation(int productId, bool newState)
         {
-            string newStatus = newState ? "Đang hoạt động" : "Dừng hoạt động";
-            MessageBox.Show($"Đổi trạng thái sản phẩm ID: {productId} thành {newStatus}");
+            try
+            {
+                string newStatus = newState ? "Đang hoạt động" : "Dừng hoạt động";
+                MessageBox.Show($"Đổi trạng thái sản phẩm ID: {productId} thành {newStatus}");
 
-            // await productService.UpdateActivation(productId, newState);
+                await productService.UpdateProductAcivation(productId, newState);
 
-            // Tải lại dữ liệu sau khi cập nhật
-            _ = LoadData();
+                _ = LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void button8_Click(object sender, EventArgs e)
@@ -160,6 +138,12 @@ namespace GUI.Views.Products
         {
             textBox1.Text = "";
             _ = LoadData();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            AddProductView f = new();
+            f.ShowDialog();
         }
     }
 }
