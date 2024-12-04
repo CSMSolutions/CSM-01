@@ -39,7 +39,7 @@
 |  7  |  Đánh giá sản phẩm | Mai |
 |  8  |  Xem đơn hàng | Văn |
 |  9  |  Xem lịch sử mua hàng | Quân |
-|  10  |  KNN(AI) | Mai |
+|  10  | Gợi ý sản phẩm bằng thuật toán KNN(AI) | Mai |
 
 
 
