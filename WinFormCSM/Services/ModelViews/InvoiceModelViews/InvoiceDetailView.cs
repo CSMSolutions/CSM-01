@@ -6,8 +6,7 @@ namespace Services.ModelViews.Invoice
     public class InvoiceDetailView
     {
         public int DonHangId { get; set; }
-        public string KhachHang { get; set; }
-        public string? NhanVien { get; set; }
+        public string HoTenKhachHang { get; set; }
         public decimal TongTien { get; set; }
         public string TinhTrangDonHang { get; set; }
         public DateTime? NgayDatHang { get; set; }
@@ -22,8 +21,7 @@ namespace Services.ModelViews.Invoice
             return new InvoiceDetailView
             {
                 DonHangId = invoice.DonHangId,
-                KhachHang = invoice.NguoiDung?.HoTen ?? "N/A",
-                NhanVien = invoice.NhanVien?.HoTen,
+                HoTenKhachHang = invoice.NguoiDung?.HoTen ?? "N/A",
                 TongTien = invoice.TongTien,
                 TinhTrangDonHang = invoice.TinhTrangDonHang,
                 NgayDatHang = invoice.NgayDatHang,

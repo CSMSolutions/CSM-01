@@ -57,9 +57,21 @@ namespace GUI.Views.DonHang
                 var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
                 if (invoiceDetails != null)
                 {
-                    txtTotal.Text = invoiceDetails.TongTien.ToString();
-
-                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietSanPhams;
+                    txtTotal.Text = invoiceDetails.TongTien.ToString("N0");
+                    txtPaymentStatus.Text = invoiceDetails.TinhTrangThanhToan ?? "N/A";
+                    txtPaymentMethod.Text = invoiceDetails.HinhThucThanhToan ?? "N/A";
+                    txtAddress.Text = invoiceDetails.DiaChiGiaoHang ?? "N/A";
+                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietSanPhams.Select(c => new
+                    {
+                        ChiTietSanPhamId = c.ChiTietSanPhamId,
+                        SanPhamId = c.SanPhamId ?? 0,
+                        TenSanPham = c.TenSanPham ?? "N/A",
+                        SizeName = c.SizeName ?? "N/A",
+                        MauName = c.MauName ?? "N/A",
+                        DonGia = c.DonGia,
+                        SoLuong = c.SoLuong,
+                        ThanhTien = c.ThanhTien
+                    }).ToList();
                 }
 
 
