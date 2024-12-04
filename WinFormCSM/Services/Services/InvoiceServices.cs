@@ -16,37 +16,59 @@ namespace Services.Services
 
         public async Task<List<InvoiceDetailView>> GetInvoicesWithDetailsAsync()
         {
-            var invoices = await _donHangRepository.GetAllAsync();
-                //.Include(d => d.NguoiDung) 
-                //.Include(d => d.NhanVien)
-                //.Include(d => d.DiaChi) 
-                //.Include(d => d.ChiTietDonHangs) 
-                //.ThenInclude(c => c.SanPham) 
-                //.ToListAsync();
+            var invoices = await _donHangRepository.Entities
+        .Include(d => d.NguoiDung)
+        .Include(d => d.DiaChi)
+        .Include(d => d.ChiTietDonHangs)
+        .ThenInclude(c => c.SanPham)
+        .ToListAsync();
 
-            return invoices.Select(d => InvoiceDetailView.Convert(d)).ToList();
+            return invoices.Select(d => new InvoiceDetailView
+            {
+                DonHangId = d.DonHangId,
+                HoTenKhachHang = d.NguoiDung?.HoTen ?? "N/A",
+                DiaChiGiaoHang = d.DiaChi?.DiaChiGiaoHang ?? "N/A",
+                TongTien = d.TongTien,
+                TinhTrangDonHang = d.TinhTrangDonHang,
+                NgayDatHang = d.NgayDatHang,
+                HinhThucThanhToan = d.HinhThucThanhToan,
+                TinhTrangThanhToan = d.TinhTrangThanhToan,
+                NgayThanhToan = d.NgayThanhToan
+            }).ToList();
         }
 
         public async Task<List<InvoiceDetailView>> GetInvoicesByCustomerIdAsync(int customerId)
         {
-            var invoices = await _donHangRepository.FindListAsync(d => d.NguoiDungId == customerId);
+            var invoices = await _donHangRepository.Entities
+        .Where(d => d.NguoiDungId == customerId)
+        .Include(d => d.NguoiDung)
+        .Include(d => d.DiaChi)
+        .Include(d => d.ChiTietDonHangs)
+        .ThenInclude(c => c.SanPham)
+        .ToListAsync();
+
             return invoices.Select(d => new InvoiceDetailView
             {
                 DonHangId = d.DonHangId,
-                KhachHang = d.NguoiDung.HoTen,
+                HoTenKhachHang = d.NguoiDung?.HoTen ?? "N/A",
+                DiaChiGiaoHang = d.DiaChi?.DiaChiGiaoHang ?? "N/A",
                 TongTien = d.TongTien,
                 TinhTrangDonHang = d.TinhTrangDonHang,
-                NgayDatHang = d.NgayDatHang
+                NgayDatHang = d.NgayDatHang,
+                HinhThucThanhToan = d.HinhThucThanhToan,
+                TinhTrangThanhToan = d.TinhTrangThanhToan,
+                NgayThanhToan = d.NgayThanhToan
             }).ToList();
         }
 
         public async Task<List<InvoiceDetailView>> SearchInvoicesAsync(int? invoiceId, string? status, DateTime? orderDate)
         {
             var invoices = await _donHangRepository.Entities
-                .Include(d => d.NguoiDung)
-                .Include(d => d.DiaChi)
-                .Include(d => d.ChiTietDonHangs)
-                .ToListAsync();
+       .Include(d => d.NguoiDung)
+       .Include(d => d.DiaChi)
+       .Include(d => d.ChiTietDonHangs)
+       .ThenInclude(c => c.SanPham)
+       .ToListAsync();
 
             var filteredInvoices = invoices
                 .Where(d => !invoiceId.HasValue || d.DonHangId == invoiceId.Value)
@@ -57,6 +79,8 @@ namespace Services.Services
             return filteredInvoices.Select(d => new InvoiceDetailView
             {
                 DonHangId = d.DonHangId,
+                HoTenKhachHang = d.NguoiDung?.HoTen ?? "N/A",
+                DiaChiGiaoHang = d.DiaChi?.DiaChiGiaoHang ?? "N/A",
                 TongTien = d.TongTien,
                 TinhTrangDonHang = d.TinhTrangDonHang,
                 NgayDatHang = d.NgayDatHang
@@ -73,27 +97,39 @@ namespace Services.Services
             }
             else
             {
-                throw new KeyNotFoundException($"Invoice with ID {invoiceId} not found.");
+                throw new KeyNotFoundException($"Mã hoá đơn: {invoiceId} không tồn tại.");
             }
         }
 
         public async Task<InvoiceDetailView> GetDetailedInvoicesAsync(int invoiceId)
         {
             var invoice = await _donHangRepository.Entities
-                .Include(d => d.NguoiDung)
-                .Include(d => d.DiaChi)
-                .Include(d => d.ChiTietDonHangs)
+            .Include(d => d.NguoiDung) 
+            .Include(d => d.DiaChi)   
+            .Include(d => d.ChiTietDonHangs) 
                 .ThenInclude(c => c.SanPham)
-                .FirstOrDefaultAsync(d => d.DonHangId == invoiceId);
+                .ThenInclude(s => s.Size)   
+            .Include(d => d.ChiTietDonHangs)
+                .ThenInclude(c => c.SanPham).ThenInclude(m => m.SanPham)
+            .Include(d => d.ChiTietDonHangs) 
+                .ThenInclude(c => c.SanPham)
+                .ThenInclude(m => m.Mau) 
+            .FirstOrDefaultAsync(d => d.DonHangId == invoiceId);
+
 
             if (invoice == null)
-                throw new KeyNotFoundException($"Invoice with ID {invoiceId} not found.");
+                throw new KeyNotFoundException($"Mã hoá đơn: {invoiceId} không tồn tại.");
 
             return InvoiceDetailView.Convert(invoice);
         }
         public async Task<List<DonHang>> GetOrdersByDateAsync(DateTime? startDate, DateTime? endDate)
         {
-            var query = _donHangRepository.Entities.AsQueryable();
+            var query = _donHangRepository.Entities
+                .Include(d => d.NguoiDung) 
+                .Include(d => d.DiaChi)  
+                .Include(d => d.ChiTietDonHangs) 
+                .ThenInclude(c => c.SanPham) 
+                .AsQueryable();
 
             if (startDate.HasValue)
                 query = query.Where(d => d.NgayDatHang >= startDate.Value);

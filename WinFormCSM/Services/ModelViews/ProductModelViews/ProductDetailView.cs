@@ -19,8 +19,7 @@ namespace Services.ModelViews.ProductModelViews
         {
             return new ProductDetailView
             {
-                ChiTietSanPhamId = chiTiet.SanPhamId,  // SanPhamId trong ChiTietDonHang trỏ đến ChiTietSanPhamId
-                SanPhamId = chiTiet.SanPham.SanPhamId,
+                
                 TenSanPham = chiTiet.SanPham.SanPham?.TenSanPham ?? "N/A",
                 SizeName = chiTiet.SanPham.Size?.SizeName ?? "N/A",
                 MauName = chiTiet.SanPham.Mau?.MauName ?? "N/A",
