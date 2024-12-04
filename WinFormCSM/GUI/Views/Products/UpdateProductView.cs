@@ -123,6 +123,8 @@ namespace GUI.Views.Products
             }
         }
 
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -138,7 +140,7 @@ namespace GUI.Views.Products
                 Discription = textBox3.Text
             };
             bool result = await productService.UpdateProduct(id, dto);
-            if(result)
+            if (result)
             {
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
@@ -147,6 +149,11 @@ namespace GUI.Views.Products
             {
                 MessageBox.Show("Cập nhật thất bại");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

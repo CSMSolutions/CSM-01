@@ -18,6 +18,7 @@ namespace GUI.Views.Products
         public AddProductView()
         {
             InitializeComponent();
+            productService = new();
         }
 
         private async void button1_Click(object sender, EventArgs e)

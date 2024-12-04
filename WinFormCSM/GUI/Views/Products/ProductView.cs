@@ -144,6 +144,7 @@ namespace GUI.Views.Products
         {
             AddProductView f = new();
             f.ShowDialog();
+            _ = LoadData();
         }
     }
 }
