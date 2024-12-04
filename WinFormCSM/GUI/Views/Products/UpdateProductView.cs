@@ -40,11 +40,12 @@ namespace GUI.Views.Products
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
-            // Thêm các cột thông tin chi tiết sản phẩm
+            dataGridView1.Columns.Add("ID", "ID");
             dataGridView1.Columns.Add("SizeName", "Size");
             dataGridView1.Columns.Add("MauName", "Màu");
             dataGridView1.Columns.Add("DonGia", "Đơn giá");
             dataGridView1.Columns.Add("SoLuong", "Số lượng");
+            dataGridView1.Columns.Add("KichHoat", "Trạng thái");
 
             // Thêm cột hình ảnh
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
@@ -54,16 +55,6 @@ namespace GUI.Views.Products
                 ImageLayout = DataGridViewImageCellLayout.Zoom
             };
             dataGridView1.Columns.Add(imageColumn);
-
-            // Thêm cột "Chỉnh sửa"
-            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn
-            {
-                Name = "EditButton",
-                HeaderText = "Chỉnh sửa",
-                Text = "Sửa",
-                UseColumnTextForButtonValue = true
-            };
-            dataGridView1.Columns.Add(editButtonColumn);
 
             // Thêm cột "Kích hoạt"
             DataGridViewButtonColumn activateButtonColumn = new DataGridViewButtonColumn
@@ -81,11 +72,12 @@ namespace GUI.Views.Products
                 var rowIndex = dataGridView1.Rows.Add();
                 var row = dataGridView1.Rows[rowIndex];
 
+                row.Cells["ID"].Value = detail.ChiTietSanPhamId;
                 row.Cells["SizeName"].Value = detail.SizeName;
                 row.Cells["MauName"].Value = detail.MauName;
                 row.Cells["DonGia"].Value = detail.DonGia;
                 row.Cells["SoLuong"].Value = detail.SoLuong;
-
+                row.Cells["KichHoat"].Value = detail.KichHoat;
                 if (System.IO.File.Exists(detail.HinhAnh))
                 {
                     row.Cells["ImageColumn"].Value = Image.FromFile(detail.HinhAnh);
@@ -106,24 +98,33 @@ namespace GUI.Views.Products
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Xử lý khi nhấn vào nút "Chỉnh sửa"
-            if (e.ColumnIndex == dataGridView1.Columns["EditButton"].Index && e.RowIndex >= 0)
-            {
-                var detail = (ResponseProductDetail)dataGridView1.Rows[e.RowIndex].DataBoundItem;
-                MessageBox.Show($"Chỉnh sửa chi tiết sản phẩm: Màu {detail.MauName}, Size {detail.SizeName}");
-                // Logic chỉnh sửa có thể được thêm tại đây
-            }
-
             // Xử lý khi nhấn vào nút "Kích hoạt"
             if (e.ColumnIndex == dataGridView1.Columns["ActivateButton"].Index && e.RowIndex >= 0)
             {
-                var detail = (ResponseProductDetail)dataGridView1.Rows[e.RowIndex].DataBoundItem;
-                MessageBox.Show($"Kích hoạt chi tiết sản phẩm: Màu {detail.MauName}, Size {detail.SizeName}");
-                // Logic kích hoạt có thể được thêm tại đây
+                int productId = (int)dataGridView1.Rows[e.RowIndex].Cells["ID"].Value;
+                string currentStatus = dataGridView1.Rows[e.RowIndex].Cells["KichHoat"].Value.ToString();
+                bool newState = currentStatus != "Đang hoạt động";
+
+                ToggleActivation(productId, newState);
             }
         }
 
+        private async void ToggleActivation(int chiTietSanPhamId, bool newState)
+        {
+            try
+            {
+                string newStatus = newState ? "Đang hoạt động" : "Dừng hoạt động";
+                MessageBox.Show($"Đổi trạng thái sản phẩm ID: {chiTietSanPhamId} thành {newStatus}");
 
+                await productService.UpdateProductDetailActivation(chiTietSanPhamId, newState);
+
+                _ = LoadData(chiTietSanPhamId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,7 +154,9 @@ namespace GUI.Views.Products
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AddProductDetailView f = new(product.SanPhamId);
+            f.ShowDialog();
+            _ = LoadData(product.SanPhamId);
         }
     }
 }

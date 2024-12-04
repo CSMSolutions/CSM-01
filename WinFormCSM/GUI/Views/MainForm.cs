@@ -1,4 +1,5 @@
-﻿using GUI.Views.Products;
+﻿using GUI.Views.Category;
+using GUI.Views.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +60,11 @@ namespace GUI.Views
         private void button4_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Statistical.index(), null);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new CategoryView(), null);
         }
     }
 }

@@ -33,7 +33,6 @@
             Button button2;
             Button button3;
             Button button4;
-            Button button5;
             Button button6;
             Button button7;
             panel1 = new Panel();
@@ -45,7 +44,6 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            button5 = new Button();
             button6 = new Button();
             button7 = new Button();
             tableLayoutPanel2.SuspendLayout();
@@ -133,25 +131,6 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(35, 40, 45);
-            button5.BackgroundImageLayout = ImageLayout.None;
-            button5.CausesValidation = false;
-            button5.Dock = DockStyle.Left;
-            button5.FlatStyle = FlatStyle.Popup;
-            button5.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.Control;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 182);
-            button5.Margin = new Padding(3, 2, 3, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(191, 41);
-            button5.TabIndex = 4;
-            button5.Text = "Nhân Viên";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             button6.BackColor = Color.FromArgb(35, 40, 45);
@@ -163,13 +142,14 @@
             button6.ForeColor = SystemColors.Control;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(3, 227);
+            button6.Location = new Point(3, 182);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(191, 41);
             button6.TabIndex = 5;
-            button6.Text = "Khách hàng";
+            button6.Text = "Danh mục";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -182,7 +162,7 @@
             button7.ForeColor = SystemColors.Control;
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(3, 272);
+            button7.Location = new Point(3, 227);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(191, 41);
@@ -236,7 +216,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 177F));
             tableLayoutPanel1.Controls.Add(button7, 0, 6);
             tableLayoutPanel1.Controls.Add(button6, 0, 5);
-            tableLayoutPanel1.Controls.Add(button5, 0, 4);
             tableLayoutPanel1.Controls.Add(button4, 0, 3);
             tableLayoutPanel1.Controls.Add(button3, 0, 2);
             tableLayoutPanel1.Controls.Add(button2, 0, 1);

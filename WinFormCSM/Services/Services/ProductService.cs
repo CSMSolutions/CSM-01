@@ -16,11 +16,16 @@ namespace Services.Services
         private readonly GenericRepository<SanPham> sanPhamRepository;
         private readonly GenericRepository<DanhMuc> danhMucRepository;
         private readonly GenericRepository<ChiTietSanPham> chiTietRepository;
+        private readonly GenericRepository<Size> sizeRepository;
+        private readonly GenericRepository<Mau> mauRepository;
+
         public ProductService()
         {
             sanPhamRepository = new GenericRepository<SanPham>();
             danhMucRepository = new GenericRepository<DanhMuc>();
             chiTietRepository = new GenericRepository<ChiTietSanPham>();
+            sizeRepository = new();
+            mauRepository = new();
         }
 
         public async Task<List<ResponseProduct>> GetAllProduct()
@@ -74,15 +79,17 @@ namespace Services.Services
         public List<ResponseProductDetail> GetProductDetailByProduct(int productId)
         {
             List<ResponseProductDetail> list = chiTietRepository.Entities
-                .Where(_ => _.SanPhamId == productId && _.KichHoat == true)
+                .Where(_ => _.SanPhamId == productId)
                 .Select(_ => new ResponseProductDetail()
                 {
+                    ChiTietSanPhamId = _.ChiTietSanPhamId,
                     MauName = _.Mau != null ? _.Mau.MauName : "N/A",
                     SizeName = _.Size != null ? _.Size.SizeName : "N/A",
                     DonGia = _.Gia,
                     SoLuong = _.SoLuongTonKho,
+                    KichHoat = _.KichHoat == true ? "Đang hoạt động" : "Dừng hoạt động",
                     HinhAnh = $"D:\\1\\Working\\DoAnChuyenNganh\\img\\{_.HinhAnhUrl}" // Tạo đường dẫn đầy đủ
-                }).ToList();
+                }).OrderBy(_ => _.KichHoat == "Dừng hoạt động").ToList();
             return list;
         }
 
@@ -104,7 +111,7 @@ namespace Services.Services
             }
         }
 
-        public async Task UpdateProductAcivation(int productId, bool newState)
+        public async Task UpdateProductActivation(int productId, bool newState)
         {
             try
             {
@@ -141,6 +148,72 @@ namespace Services.Services
             } catch
             {
                 return false;
+            }
+        }
+
+        public List<string> GetAllSizeName()
+        {
+            return sizeRepository.Entities.Select(_ => _.SizeName).ToList();
+        }
+
+        public List<string> GetAllMauName()
+        {
+            return mauRepository.Entities.Select(_ => _.MauName).ToList();
+        }
+
+        public async Task<bool> AddProductDetail(CreateProductDetailDTO dto, string sourceImagePath)
+        {
+            try
+            {
+                // Kiểm tra dữ liệu đầu vào
+                if (string.IsNullOrWhiteSpace(sourceImagePath) || dto.Gia <= 0 || dto.SoLuongTonKho <= 0)
+                {
+                    return false;
+                }
+
+                string fileName = Path.GetFileName(sourceImagePath);
+                string destinationPath = Path.Combine("D:\\1\\Working\\DoAnChuyenNganh\\img", fileName);
+
+                if (!File.Exists(destinationPath))
+                {
+                    File.Copy(sourceImagePath, destinationPath, overwrite: true);
+                }
+
+                // Tìm Size và Mau trong cơ sở dữ liệu
+                Size size = sizeRepository.Entities.FirstOrDefault(_ => _.SizeName == dto.Size) ?? throw new Exception("Không tìm thấy Size");
+                Mau mau = mauRepository.Entities.FirstOrDefault(_ => _.MauName == dto.Mau) ?? throw new Exception("Không tìm thấy Màu");
+
+                // Tạo đối tượng ChiTietSanPham
+                ChiTietSanPham cts = new ChiTietSanPham()
+                {
+                    SanPhamId = dto.SanPhamId,
+                    SizeId = size.SizeId,
+                    MauId = mau.MauId,
+                    Gia = dto.Gia,
+                    SoLuongTonKho = dto.SoLuongTonKho,
+                    HinhAnhUrl = fileName // Chỉ lưu tên file
+                };
+
+                await chiTietRepository.InsertAsync(cts);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task UpdateProductDetailActivation(int productId, bool newState)
+        {
+            try
+            {
+                ChiTietSanPham sp = chiTietRepository.Entities.FirstOrDefault(_ => _.ChiTietSanPhamId == productId) ?? throw new Exception();
+                sp.KichHoat = newState;
+                await chiTietRepository.UpdateAsync(sp);
+            }
+            catch
+            {
+                throw new Exception("Cập nhật thất bại");
             }
         }
     }

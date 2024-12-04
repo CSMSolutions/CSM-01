@@ -23,7 +23,7 @@ namespace GUI.Views
 
             if (await _loginService.Login(request))
             {
-                DonHang.Index f = new();
+                MainForm f = new();
                 f.Show();
                 this.Hide();
             }

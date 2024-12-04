@@ -88,7 +88,7 @@ namespace GUI.Views.Products
                 string newStatus = newState ? "Đang hoạt động" : "Dừng hoạt động";
                 MessageBox.Show($"Đổi trạng thái sản phẩm ID: {productId} thành {newStatus}");
 
-                await productService.UpdateProductAcivation(productId, newState);
+                await productService.UpdateProductActivation(productId, newState);
 
                 _ = LoadData();
             }
