@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Models;
+﻿namespace Models;
 
 public partial class SanPham
 {
@@ -11,23 +8,19 @@ public partial class SanPham
 
     public string? MoTa { get; set; }
 
-    public decimal Gia { get; set; }
+    public int? SoLuongDaBan { get; set; }
 
-    public int SoLuongTonKho { get; set; }
+    public int? SoSaoTb { get; set; }
 
     public int? DanhMucId { get; set; }
 
-    public string? HinhAnhUrl { get; set; }
-
-    public DateTime? NgayTao { get; set; }
-
     public bool? KichHoat { get; set; }
 
-    public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
+    public virtual ICollection<ChiTietKhuyenMai> ChiTietKhuyenMais { get; set; } = new List<ChiTietKhuyenMai>();
+
+    public virtual ICollection<ChiTietSanPham> ChiTietSanPhams { get; set; } = new List<ChiTietSanPham>();
 
     public virtual DanhMuc? DanhMuc { get; set; }
-
-    public virtual ICollection<GioHang> GioHangs { get; set; } = new List<GioHang>();
 
     public virtual ICollection<PhanHoi> PhanHois { get; set; } = new List<PhanHoi>();
 }

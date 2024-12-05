@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Models;
 
 namespace Models;
 
@@ -15,5 +14,5 @@ public partial class GioHang
 
     public virtual NguoiDung NguoiDung { get; set; } = null!;
 
-    public virtual SanPham SanPham { get; set; } = null!;
+    public virtual ChiTietSanPham SanPham { get; set; } = null!;
 }

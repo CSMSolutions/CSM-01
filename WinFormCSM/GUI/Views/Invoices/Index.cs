@@ -38,15 +38,10 @@ namespace GUI.Views.DonHang
         }
         private async Task LoadDataInvoicesDetail()
         {
-            try
-            {
-                var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
-                dtGInvoice.DataSource = invoices;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
-            }
+
+            var invoices = await _invoiceServices.GetInvoicesWithDetailsAsync();
+            dtGInvoice.DataSource = invoices;
+
         }
 
         private async void DtGInvoice_CellClick(object? sender, DataGridViewCellEventArgs e)
@@ -57,19 +52,29 @@ namespace GUI.Views.DonHang
                 btnExport.Enabled = true;
                 btnReject.Enabled = true;
 
-                // Lấy ID hóa đơn từ hàng được chọn
                 int invoiceId = Convert.ToInt32(dtGInvoice.Rows[e.RowIndex].Cells["DonHangId"].Value);
 
-                // Gọi phương thức lấy dữ liệu hóa đơn chi tiết
                 var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
-                if (invoiceDetails != null) {
-                    txtAddress.Text = invoiceDetails.DiaChiGiaoHang;
-                    txtTotal.Text = invoiceDetails.TongTien.ToString();
-
-                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietDonHangs;
+                if (invoiceDetails != null)
+                {
+                    txtTotal.Text = invoiceDetails.TongTien.ToString("N0");
+                    txtPaymentStatus.Text = invoiceDetails.TinhTrangThanhToan ?? "N/A";
+                    txtPaymentMethod.Text = invoiceDetails.HinhThucThanhToan ?? "N/A";
+                    txtAddress.Text = invoiceDetails.DiaChiGiaoHang ?? "N/A";
+                    dtGDetaiInvoices.DataSource = invoiceDetails.ChiTietSanPhams.Select(c => new
+                    {
+                        ChiTietSanPhamId = c.ChiTietSanPhamId,
+                        SanPhamId = c.SanPhamId ?? 0,
+                        TenSanPham = c.TenSanPham ?? "N/A",
+                        SizeName = c.SizeName ?? "N/A",
+                        MauName = c.MauName ?? "N/A",
+                        DonGia = c.DonGia,
+                        SoLuong = c.SoLuong,
+                        ThanhTien = c.ThanhTien
+                    }).ToList();
                 }
 
-                
+
             }
 
         }
@@ -128,7 +133,7 @@ namespace GUI.Views.DonHang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
+                MessageBox.Show($"Message: {ex.Message}\nInnerException: {ex.InnerException?.Message}\nStackTrace: {ex.StackTrace}");
             }
         }
 
@@ -157,7 +162,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "đã xác nhận");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Đã Xác Nhận");
                 await LoadDataToGridView();
             }
         }
@@ -167,7 +172,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "đã giao hàng");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Đang Vận Chuyển");
                 await LoadDataToGridView();
             }
         }
@@ -177,7 +182,7 @@ namespace GUI.Views.DonHang
             if (dtGInvoice.CurrentRow != null)
             {
                 int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
-                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "từ chối");
+                await _invoiceServices.UpdateInvoiceStatusAsync(invoiceId, "Từ chối");
                 await LoadDataToGridView();
             }
         }
@@ -188,6 +193,11 @@ namespace GUI.Views.DonHang
         }
 
         private void dtGDetaiInvoices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void sideBar1_Load(object sender, EventArgs e)
         {
 
         }

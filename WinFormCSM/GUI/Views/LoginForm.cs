@@ -1,5 +1,6 @@
 ﻿using Services.ModelViews.LoginModelViews;
 using Services;
+using GUI.Views.DonHang;
 
 namespace GUI.Views
 {
@@ -14,18 +15,27 @@ namespace GUI.Views
 
         private async void login_Btn_Click(object sender, EventArgs e)
         {
-            LoginRequest request = new() {
+            LoginRequest request = new()
+            {
                 Username = username_Txtbox.Text,
                 Password = password_Txtbox.Text
             };
 
-            if( await _loginService.Login(request))
+            if (await _loginService.Login(request))
             {
-                MessageBox.Show("Đăng nhập thành công");
-            } else
+                MainForm f = new();
+                f.Show();
+                this.Hide();
+            }
+            else
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
