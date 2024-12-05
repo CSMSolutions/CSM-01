@@ -66,7 +66,7 @@ namespace Services.Services
 
         public SanPham? GetProductById(int id)
         {
-            SanPham? sp = sanPhamRepository.Entities.Include(_ => _.ChiTietSanPhams).FirstOrDefault();
+            SanPham? sp = sanPhamRepository.Entities.Include(_ => _.ChiTietSanPhams).FirstOrDefault(_ => _.SanPhamId == id);
             return sp;
         }
 
@@ -88,7 +88,7 @@ namespace Services.Services
                     DonGia = _.Gia,
                     SoLuong = _.SoLuongTonKho,
                     KichHoat = _.KichHoat == true ? "Đang hoạt động" : "Dừng hoạt động",
-                    HinhAnh = $"D:\\1\\Working\\DoAnChuyenNganh\\img\\{_.HinhAnhUrl}" // Tạo đường dẫn đầy đủ
+                    HinhAnh = $"E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn\\DoAnChuyenNganh\\img\\{_.HinhAnhUrl}" // Tạo đường dẫn đầy đủ
                 }).OrderBy(_ => _.KichHoat == "Dừng hoạt động").ToList();
             return list;
         }
@@ -172,18 +172,17 @@ namespace Services.Services
                 }
 
                 string fileName = Path.GetFileName(sourceImagePath);
-                string destinationPath = Path.Combine("D:\\1\\Working\\DoAnChuyenNganh\\img", fileName);
+                string destinationPath = Path.Combine("E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn\\DoAnChuyenNganh\\img\\", fileName);
 
                 if (!File.Exists(destinationPath))
                 {
                     File.Copy(sourceImagePath, destinationPath, overwrite: true);
                 }
 
-                // Tìm Size và Mau trong cơ sở dữ liệu
                 Size size = sizeRepository.Entities.FirstOrDefault(_ => _.SizeName == dto.Size) ?? throw new Exception("Không tìm thấy Size");
                 Mau mau = mauRepository.Entities.FirstOrDefault(_ => _.MauName == dto.Mau) ?? throw new Exception("Không tìm thấy Màu");
 
-                // Tạo đối tượng ChiTietSanPham
+
                 ChiTietSanPham cts = new ChiTietSanPham()
                 {
                     SanPhamId = dto.SanPhamId,

@@ -73,7 +73,7 @@
             // 
             // sideBar1
             // 
-            sideBar1.Dock = DockStyle.Fill;
+            sideBar1.Dock = DockStyle.Left;
             sideBar1.Location = new Point(3, 3);
             sideBar1.Name = "sideBar1";
             sideBar1.Size = new Size(210, 692);

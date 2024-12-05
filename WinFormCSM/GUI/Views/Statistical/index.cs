@@ -16,12 +16,11 @@ namespace GUI.Views.Statistical
             _invoiceServices = new InvoiceServices();
         }
 
-        // Thống kê theo ngày hiện tại
         private async void btnStaFLDay_Click(object sender, EventArgs e)
         {
             var today = DateTime.Today;
 
-            var orders = await _invoiceServices.GetOrdersByDateAsync(today, today);
+            var orders = await _invoiceServices.GetOrdersByDateAsync(today.AddDays(-1), today);
 
             var dailyRevenue = orders
                 .Where(o => o.NgayDatHang.HasValue)
@@ -29,12 +28,12 @@ namespace GUI.Views.Statistical
                 .Select(g => new { Date = g.Key, Revenue = g.Sum(o => o.TongTien) })
                 .FirstOrDefault();
 
-            // Vẽ biểu đồ
+            
             mainPlot.Plot.Clear();
             if (dailyRevenue != null)
             {
                 var revenues = new[] { (double)dailyRevenue.Revenue };
-                var positions = new[] { 0.0 }; // Vị trí duy nhất cho ngày hiện tại
+                var positions = new[] { 0.0 }; 
                 var labels = new[] { dailyRevenue.Date.ToShortDateString() };
 
                 mainPlot.Plot.AddBar(revenues, positions);
@@ -46,11 +45,11 @@ namespace GUI.Views.Statistical
             mainPlot.Plot.YLabel("Doanh thu");
             mainPlot.Refresh();
 
-            // Hiển thị tổng doanh thu
+            
             txtTotal.Text = dailyRevenue != null ? dailyRevenue.Revenue.ToString("N0") : "0";
         }
 
-        // Thống kê theo tháng
+
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
             var startDate = TimeBegin.Value;
@@ -74,7 +73,6 @@ namespace GUI.Views.Statistical
             var months = monthlyRevenue.Select(m => (double)m.Month).ToArray();
             var revenues = monthlyRevenue.Select(m => (double)m.Revenue).ToArray();
 
-            // Vẽ biểu đồ
             mainPlot.Plot.Clear();
             mainPlot.Plot.AddBar(revenues, months);
             mainPlot.Plot.XTicks(months, months.Select(m => $"Tháng {m}").ToArray());
