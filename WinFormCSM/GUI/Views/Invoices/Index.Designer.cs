@@ -53,6 +53,7 @@
             label5 = new Label();
             dtGInvoice = new DataGridView();
             panel4 = new Panel();
+            button1 = new Button();
             btnExport = new Button();
             btnReject = new Button();
             btnApprove = new Button();
@@ -367,6 +368,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(button1);
             panel4.Controls.Add(btnExport);
             panel4.Controls.Add(btnReject);
             panel4.Controls.Add(btnApprove);
@@ -375,6 +377,23 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(755, 99);
             panel4.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.SkyBlue;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(484, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(145, 55);
+            button1.TabIndex = 3;
+            button1.Text = "Xuất File";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnExport
             // 
@@ -401,7 +420,7 @@
             btnReject.ImageAlign = ContentAlignment.MiddleLeft;
             btnReject.Location = new Point(345, 19);
             btnReject.Name = "btnReject";
-            btnReject.Size = new Size(135, 61);
+            btnReject.Size = new Size(118, 61);
             btnReject.TabIndex = 1;
             btnReject.Text = "Từ Chối";
             btnReject.TextAlign = ContentAlignment.MiddleRight;
@@ -639,5 +658,6 @@
         private Label label8;
         private Label label7;
         private Label label12;
+        private Button button1;
     }
 }

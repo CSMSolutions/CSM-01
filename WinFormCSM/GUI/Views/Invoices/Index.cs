@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 using DataAccess;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Models;
 using Services.Services;
 
@@ -81,7 +85,7 @@ namespace GUI.Views.DonHang
 
         private void LoadStatusOptions()
         {
-            var statusList = new List<string> { "Chờ xác nhận", "Đã xác nhận", "Chờ giao hàng", "Đã giao hàng" };
+            var statusList = new List<string> { "Đang xử lý", "Đã Xác Nhận", "Đang Vận Chuyển", "Hoàn Thành" };
             cbStatusInvoice.DataSource = statusList;
             cbStatusInvoice.SelectedIndex = 0;
         }
@@ -200,6 +204,85 @@ namespace GUI.Views.DonHang
         private void sideBar1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            if (dtGInvoice.CurrentRow != null)
+            {
+                int invoiceId = Convert.ToInt32(dtGInvoice.CurrentRow.Cells["DonHangId"].Value);
+
+                // Lấy thông tin hóa đơn và chi tiết hóa đơn
+                var invoiceDetails = await _invoiceServices.GetDetailedInvoicesAsync(invoiceId);
+                if (invoiceDetails != null)
+                {
+                    // Đường dẫn file Excel xuất ra
+                    string filePath = $"E:\\HUIT\\HK2_2024_2025\\PTPM\\DoAn\\HoaDon_{invoiceId}.xlsx";
+
+                    // Tạo workbook mới
+                    using (var workbook = new XLWorkbook())
+                    {
+                        // Tạo sheet
+                        var worksheet = workbook.Worksheets.Add("Hóa Đơn");
+
+                        // Thêm thông tin hóa đơn
+                        worksheet.Cell(1, 1).Value = "HÓA ĐƠN";
+                        worksheet.Cell(1, 1).Style.Font.Bold = true;
+                        worksheet.Cell(1, 1).Style.Font.FontSize = 16;
+
+                        worksheet.Cell(3, 1).Value = "Mã hóa đơn:";
+                        worksheet.Cell(3, 2).Value = invoiceDetails.DonHangId;
+
+                        worksheet.Cell(4, 1).Value = "Khách hàng:";
+                        worksheet.Cell(4, 2).Value = invoiceDetails.HoTenKhachHang;
+
+                        worksheet.Cell(5, 1).Value = "Địa chỉ giao hàng:";
+                        worksheet.Cell(5, 2).Value = invoiceDetails.DiaChiGiaoHang;
+
+                        worksheet.Cell(6, 1).Value = "Phương thức thanh toán:";
+                        worksheet.Cell(6, 2).Value = invoiceDetails.HinhThucThanhToan;
+
+                        worksheet.Cell(7, 1).Value = "Tổng tiền:";
+                        worksheet.Cell(7, 2).Value = $"{invoiceDetails.TongTien:N0} VND";
+
+
+                        worksheet.Cell(9, 1).Value = "STT";
+                        worksheet.Cell(9, 2).Value = "Tên sản phẩm";
+                        worksheet.Cell(9, 3).Value = "Size";
+                        worksheet.Cell(9, 4).Value = "Màu sắc";
+                        worksheet.Cell(9, 5).Value = "Số lượng";
+                        worksheet.Cell(9, 6).Value = "Đơn giá";
+                        worksheet.Cell(9, 7).Value = "Thành tiền";
+
+
+                        int row = 10;
+                        int index = 1;
+                        foreach (var detail in invoiceDetails.ChiTietSanPhams)
+                        {
+                            worksheet.Cell(row, 1).Value = index++;
+                            worksheet.Cell(row, 2).Value = detail.TenSanPham;
+                            worksheet.Cell(row, 3).Value = detail.SizeName;
+                            worksheet.Cell(row, 4).Value = detail.MauName;
+                            worksheet.Cell(row, 5).Value = detail.SoLuong;
+                            worksheet.Cell(row, 6).Value = detail.DonGia;
+                            worksheet.Cell(row, 7).Value = detail.ThanhTien;
+                            row++;
+                        }
+
+                        // Tùy chỉnh định dạng
+                        worksheet.Columns().AdjustToContents();
+
+                        // Lưu file
+                        workbook.SaveAs(filePath);
+
+                        MessageBox.Show($"Hóa đơn đã được xuất thành công tại {filePath}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy hóa đơn để xuất.");
+                }
+            }
         }
     }
 }

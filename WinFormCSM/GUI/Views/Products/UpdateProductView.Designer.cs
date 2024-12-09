@@ -60,15 +60,17 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 168);
+            panel1.Size = new Size(1206, 224);
             panel1.TabIndex = 0;
             // 
             // button2
             // 
-            button2.Location = new Point(428, 88);
+            button2.Location = new Point(489, 117);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(156, 23);
+            button2.Size = new Size(178, 31);
             button2.TabIndex = 11;
             button2.Text = "Thêm chi tiết sản phẩm";
             button2.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(143, 88);
+            button1.Location = new Point(163, 117);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(106, 23);
+            button1.Size = new Size(121, 31);
             button1.TabIndex = 10;
             button1.Text = "Lưu thông tin";
             button1.UseVisualStyleBackColor = true;
@@ -87,66 +90,70 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(437, 8);
+            comboBox1.Location = new Point(499, 11);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(138, 28);
             comboBox1.TabIndex = 8;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(437, 42);
+            textBox3.Location = new Point(499, 56);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(335, 23);
+            textBox3.Size = new Size(382, 27);
             textBox3.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(39, 11);
+            label5.Location = new Point(45, 15);
             label5.Name = "label5";
-            label5.Size = new Size(79, 15);
+            label5.Size = new Size(98, 20);
             label5.TabIndex = 6;
             label5.Text = "Mã sản phẩm";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(143, 42);
+            textBox2.Location = new Point(163, 56);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(114, 27);
             textBox2.TabIndex = 5;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(143, 8);
+            textBox1.Location = new Point(163, 11);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(114, 27);
             textBox1.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(362, 11);
+            label3.Location = new Point(414, 15);
             label3.Name = "label3";
-            label3.Size = new Size(62, 15);
+            label3.Size = new Size(76, 20);
             label3.TabIndex = 2;
             label3.Text = "Danh mục";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(362, 45);
+            label2.Location = new Point(414, 60);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(48, 20);
             label2.TabIndex = 1;
             label2.Text = "Mô tả";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(39, 45);
+            label1.Location = new Point(45, 60);
             label1.Name = "label1";
-            label1.Size = new Size(80, 15);
+            label1.Size = new Size(100, 20);
             label1.TabIndex = 0;
             label1.Text = "Tên sản phẩm";
             // 
@@ -154,9 +161,10 @@
             // 
             panel2.Controls.Add(dataGridView1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 168);
+            panel2.Location = new Point(0, 224);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 282);
+            panel2.Size = new Size(1206, 376);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -167,20 +175,23 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = SystemColors.Control;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(800, 282);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1206, 376);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // UpdateProductView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1206, 600);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UpdateProductView";
             Text = "UpdateProductView";
             Load += UpdateProductView_Load;
