@@ -88,7 +88,7 @@ namespace Services.Services
                     DonGia = _.Gia,
                     SoLuong = _.SoLuongTonKho,
                     KichHoat = _.KichHoat == true ? "Đang hoạt động" : "Dừng hoạt động",
-                    HinhAnh = $"E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn\\DoAnChuyenNganh\\img\\{_.HinhAnhUrl}" // Tạo đường dẫn đầy đủ
+                    HinhAnh = $"E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn_2\\CSM02-WEB\\DoAnChuyenNganh\\img\\{_.HinhAnhUrl}" // Tạo đường dẫn đầy đủ
                 }).OrderBy(_ => _.KichHoat == "Dừng hoạt động").ToList();
             return list;
         }
@@ -172,7 +172,7 @@ namespace Services.Services
                 }
 
                 string fileName = Path.GetFileName(sourceImagePath);
-                string destinationPath = Path.Combine("E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn\\DoAnChuyenNganh\\img\\", fileName);
+                string destinationPath = Path.Combine("E:\\HUIT\\HK2_2024_2025\\PTPM\\Web_DoAn_2\\CSM02-WEB\\DoAnChuyenNganh\\img\\", fileName);
 
                 if (!File.Exists(destinationPath))
                 {

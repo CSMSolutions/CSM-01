@@ -8,10 +8,11 @@ namespace Services.Services
     public class InvoiceServices
     {
         private readonly GenericRepository<DonHang> _donHangRepository;
-
+        private readonly GenericRepository<ChiTietSanPham> _chitietSanPhamRepo;
         public InvoiceServices()
         {
             _donHangRepository = new GenericRepository<DonHang>();
+            _chitietSanPhamRepo = new GenericRepository<ChiTietSanPham>();
         }
 
         public async Task<List<InvoiceDetailView>> GetInvoicesWithDetailsAsync()
@@ -89,10 +90,29 @@ namespace Services.Services
 
         public async Task UpdateInvoiceStatusAsync(int invoiceId, string newStatus)
         {
-            var invoice = await _donHangRepository.GetByIdAsync(invoiceId);
+            var invoice = await _donHangRepository.Entities
+         .Include(d => d.ChiTietDonHangs) 
+         .ThenInclude(cd => cd.SanPham) 
+         .FirstOrDefaultAsync(d => d.DonHangId == invoiceId);
+
             if (invoice != null)
             {
+
                 invoice.TinhTrangDonHang = newStatus;
+
+                if (newStatus == "Từ chối")
+                {
+                    foreach (var chiTietDonHang in invoice.ChiTietDonHangs)
+                    {
+                        var chiTietSanPham = chiTietDonHang.SanPham;
+                        if (chiTietSanPham != null)
+                        {
+
+                            chiTietSanPham.SoLuongTonKho += chiTietDonHang.SoLuong;
+                            await _chitietSanPhamRepo.UpdateAsync(chiTietSanPham);
+                        }
+                    }
+                }
                 await _donHangRepository.UpdateAsync(invoice);
             }
             else
@@ -104,16 +124,16 @@ namespace Services.Services
         public async Task<InvoiceDetailView> GetDetailedInvoicesAsync(int invoiceId)
         {
             var invoice = await _donHangRepository.Entities
-            .Include(d => d.NguoiDung) 
-            .Include(d => d.DiaChi)   
-            .Include(d => d.ChiTietDonHangs) 
+            .Include(d => d.NguoiDung)
+            .Include(d => d.DiaChi)
+            .Include(d => d.ChiTietDonHangs)
                 .ThenInclude(c => c.SanPham)
-                .ThenInclude(s => s.Size)   
+                .ThenInclude(s => s.Size)
             .Include(d => d.ChiTietDonHangs)
                 .ThenInclude(c => c.SanPham).ThenInclude(m => m.SanPham)
-            .Include(d => d.ChiTietDonHangs) 
+            .Include(d => d.ChiTietDonHangs)
                 .ThenInclude(c => c.SanPham)
-                .ThenInclude(m => m.Mau) 
+                .ThenInclude(m => m.Mau)
             .FirstOrDefaultAsync(d => d.DonHangId == invoiceId);
 
 
@@ -125,10 +145,10 @@ namespace Services.Services
         public async Task<List<DonHang>> GetOrdersByDateAsync(DateTime? startDate, DateTime? endDate)
         {
             var query = _donHangRepository.Entities
-                .Include(d => d.NguoiDung) 
-                .Include(d => d.DiaChi)  
-                .Include(d => d.ChiTietDonHangs) 
-                .ThenInclude(c => c.SanPham) 
+                .Include(d => d.NguoiDung)
+                .Include(d => d.DiaChi)
+                .Include(d => d.ChiTietDonHangs)
+                .ThenInclude(c => c.SanPham)
                 .AsQueryable();
 
             if (startDate.HasValue)
